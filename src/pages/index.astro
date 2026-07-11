@@ -1,0 +1,300 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroScene from '../components/HeroScene.astro';
+import DryScene from '../components/DryScene.astro';
+import ServiceIcon from '../components/ServiceIcon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../config/site';
+import { SERVICES } from '../data/services';
+import { CITIES } from '../data/cities';
+
+const faq = [
+  { q: 'How fast can a crew get to me?', a: 'Dispatch answers 24/7 and crews are local to San Joaquin and Stanislaus Counties. Emergency response across Stockton, Modesto, Lodi, Tracy, and Manteca is typically a matter of hours, day or night.' },
+  { q: 'What should I do while I wait?', a: 'If it is safe: shut off the water at the main, kill power to affected rooms at the breaker, move what you can to dry ground, and do not run the HVAC. The dispatcher can walk you through it on the phone.' },
+  { q: 'Will my insurance cover this?', a: 'Sudden losses like burst pipes and appliance failures are commonly covered; rising outside flood water usually requires separate flood insurance. Crews document everything from the first visit so whatever coverage you have actually pays.' },
+  { q: 'Do you charge to come out?', a: 'Calling costs nothing and the dispatcher will give you straight answers about the situation. For covered losses, many crews bill your insurer directly so you are only out your deductible.' },
+  { q: 'Is it really an emergency if the water already stopped?', a: 'Yes. The water you can see is not the problem; the water inside walls, pad, and subfloor is. Mold starts in about 48 hours, so the drying clock is running whether or not the leak is.' }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+};
+---
+<Base
+  title="Water Damage Restoration Stockton & Modesto | 24/7 | 209 Restoration"
+  description="Emergency water damage restoration across the 209: Stockton, Modesto, Lodi, Tracy, Manteca. Flood, sewage, and burst pipe cleanup. Open now, crews answer 24/7. Call (209) 980-2782."
+  schema={[faqSchema]}
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><span class="open-dot" aria-hidden="true"></span>&nbsp; Open now &middot; 24/7 &middot; San Joaquin + Stanislaus</p>
+        <h1>Water in your house.<br /><span class="accent">Crews in the 209.</span></h1>
+        <p class="hero-sub">Burst pipe, flooded floor, sewage backup, storm leak. One call reaches a live dispatcher who sends a licensed local restoration crew, any hour, any night, anywhere from Stockton to Turlock.</p>
+        <div class="hero-actions">
+          <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+          <a class="btn-ghost" href="/services/">See services</a>
+        </div>
+        <ul class="hero-proof mono">
+          <li>Licensed &amp; insured crews</li>
+          <li>Insurance direct billing</li>
+          <li>Truck-mounted extraction</li>
+        </ul>
+      </div>
+      <HeroScene />
+    </div>
+  </section>
+
+  <div class="waterline" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0 12 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="var(--cyan)" stroke-width="2" opacity="0.5"/></svg>
+  </div>
+
+  <section class="section-deep">
+    <div class="wrap">
+      <span class="eyebrow">Every kind of water problem</span>
+      <h2>Restoration services</h2>
+      <p class="section-sub">Each service has its own page with what the crew does, what it costs your insurance instead of you, and what to do before they arrive.</p>
+      <div class="card-grid">
+        {SERVICES.map((s) => (
+          <a class="card" href={`/services/${s.slug}/`}>
+            <ServiceIcon icon={s.icon} />
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="card-cta">Details &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+
+  <section>
+    <div class="wrap how-grid">
+      <div>
+        <span class="eyebrow">What happens when you call</span>
+        <h2>From flooded to dry</h2>
+        <ol class="steps">
+          <li>
+            <h3>You call, a person answers</h3>
+            <p>No voicemail, no callback queue. Describe what is happening and the dispatcher tells you what to shut off while a crew is assigned.</p>
+          </li>
+          <li>
+            <h3>A local crew rolls</h3>
+            <p>Licensed, insured restoration techs from your side of the Valley, with truck-mounted extraction and drying equipment on board.</p>
+          </li>
+          <li>
+            <h3>Water out, damage stopped</h3>
+            <p>Extraction, moisture mapping, and controlled demo of what cannot be saved, with photos and readings documented for your claim.</p>
+          </li>
+          <li>
+            <h3>Dry, verified, done</h3>
+            <p>Air movers and dehumidifiers run until meter readings hit dry standard, checked daily. Then rebuild can start on a clean slate.</p>
+          </li>
+        </ol>
+      </div>
+      <DryScene />
+    </div>
+  </section>
+
+  <section class="section-deep">
+    <div class="wrap">
+      <span class="eyebrow">Local crews, local knowledge</span>
+      <h2>Serving the 209</h2>
+      <p class="section-sub">Delta water tables, Tuolumne floodplains, hard-water slab leaks, same-age tract plumbing. Every city here has its own way of getting wet, and every one has its own page.</p>
+      <div class="card-grid areas-grid">
+        {CITIES.map((c) => (
+          <a class="card" href={`/areas/${c.slug}/`}>
+            <h3>{c.name}</h3>
+            <p class="mono county">{c.county.toUpperCase()}</p>
+            <p>{c.short}</p>
+            <span class="card-cta">Local page &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap testi-wrap">
+      <span class="eyebrow">From the call log</span>
+      <h2>Neighbors we picked up for</h2>
+      <div class="testi-grid">
+        <blockquote>
+          <p>&ldquo;Water heater let go in the garage at 11pm and was under two bedroom walls by the time we found it. Called, got a human, crew was extracting before 1am. They handled the insurance photos too.&rdquo;</p>
+          <cite class="mono">D.R. &middot; MANTECA</cite>
+        </blockquote>
+        <blockquote>
+          <p>&ldquo;Sewage backup in a rental on the east side. Crew contained it, gutted what had to go, and it did not smell like anything happened a week later. Tenants stayed.&rdquo;</p>
+          <cite class="mono">M.G. &middot; LODI</cite>
+        </blockquote>
+        <blockquote>
+          <p>&ldquo;Slab leak ran under our floors for who knows how long. They mapped the moisture before cutting anything, which saved most of the hallway. Adjuster accepted their scope as written.&rdquo;</p>
+          <cite class="mono">K.P. &middot; TRACY</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-deep">
+    <div class="wrap trust-wrap">
+      <span class="eyebrow">Why call here first</span>
+      <h2>The 2am math</h2>
+      <div class="trust-grid">
+        <div>
+          <h3>Franchise 800 number</h3>
+          <p>Call center out of state, crew assigned from wherever has capacity, response measured in tomorrow. Water keeps soaking the whole time.</p>
+        </div>
+        <div>
+          <h3>Waiting until morning</h3>
+          <p>Eight more hours of wicking into drywall and pad. The 48-hour mold clock does not care that it was late. Small losses become demo jobs overnight.</p>
+        </div>
+        <div class="trust-us">
+          <h3>209 Restoration</h3>
+          <p>Local dispatch, local crews, answer in seconds at any hour. Extraction tonight, drying verified with meters, documentation your adjuster accepts.</p>
+          <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap faq-wrap">
+      <span class="eyebrow">Straight answers</span>
+      <h2>Questions people ask at 2am</h2>
+      <div class="faq-list">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand heading="Do not wait on wet walls." sub="Every hour of soak time adds to the demo list. The call is free and a dispatcher answers right now." />
+</Base>
+
+<style>
+  .hero {
+    position: relative;
+    padding-top: 4.5rem;
+    padding-bottom: 5.5rem;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(720px 420px at 78% -10%, rgba(13, 148, 168, 0.13), transparent 65%),
+      radial-gradient(560px 380px at 5% 100%, rgba(103, 211, 224, 0.1), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 3.5rem; align-items: center;
+  }
+  .accent {
+    background: linear-gradient(115deg, var(--primary) 20%, #2f7fb8 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-sub { margin: 1.4rem 0 2rem; font-size: 1.13rem; max-width: 52ch; line-height: 1.75; }
+  .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
+  .hero-proof {
+    display: flex; gap: 1.5rem; flex-wrap: wrap; list-style: none;
+    margin-top: 2.2rem; font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.02em; text-transform: none; color: var(--silt);
+  }
+  .hero-proof li { display: flex; align-items: center; gap: 0.45rem; }
+  .hero-proof li::before {
+    content: '';
+    width: 17px; height: 17px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a7486' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 9px no-repeat;
+  }
+
+  .section-sub { max-width: 60ch; margin-top: 1rem; font-size: 1.05rem; }
+
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+  .steps { list-style: none; counter-reset: step; margin-top: 2.4rem; }
+  .steps li {
+    counter-increment: step; position: relative;
+    padding: 0 0 1.9rem 3.6rem;
+    border-left: 1px solid var(--line); margin-left: 1.25rem;
+  }
+  .steps li:last-child { padding-bottom: 0; border-left-color: transparent; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute; left: -1.3rem; top: -0.2rem;
+    width: 2.5rem; height: 2.5rem; border-radius: 13px;
+    background: var(--tint); border: 1px solid rgba(13, 148, 168, 0.25);
+    color: var(--primary-deep); font-family: var(--font-display); font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps h3 { font-size: 1.05rem; }
+  .steps p { margin-top: 0.35rem; font-size: 0.94rem; }
+
+  .county { font-size: 0.68rem; margin-top: -0.35rem; color: #8aa0ab; letter-spacing: 0.08em; }
+
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.8rem; }
+  .testi-grid blockquote {
+    background: #ffffff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 1.8rem 1.6rem; display: flex; flex-direction: column; gap: 1.1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .testi-grid blockquote::before {
+    content: 'C';
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 2.6rem; line-height: 0.5;
+    color: var(--primary); opacity: 0.55;
+    margin-bottom: -0.4rem;
+  }
+  .testi-grid p { font-size: 0.94rem; line-height: 1.65; }
+  .testi-grid cite { font-style: normal; font-size: 0.72rem; }
+
+  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.8rem; }
+  .trust-grid > div {
+    background: #ffffff;
+    border: 1px solid var(--line); border-radius: 16px; padding: 1.8rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .trust-grid p { margin-top: 0.6rem; font-size: 0.94rem; }
+  .trust-us {
+    background: linear-gradient(160deg, var(--tint), #ffffff 70%) !important;
+    border-color: rgba(13, 148, 168, 0.35) !important;
+  }
+  .trust-us .btn-call { margin-top: 1.3rem; font-size: 0.95rem; padding: 0.8rem 1.5rem; }
+
+  .faq-list { margin-top: 2.4rem; max-width: 780px; }
+  details {
+    border: 1px solid var(--line); border-radius: 14px;
+    padding: 1.1rem 1.35rem; margin-bottom: 0.75rem; background: #ffffff;
+    box-shadow: var(--shadow-sm);
+  }
+  summary {
+    cursor: pointer; font-family: var(--font-display); font-weight: 600;
+    color: var(--paper); list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+'; color: var(--primary);
+    font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; line-height: 1;
+  }
+  details[open] summary::after { content: '2'; }
+  details p { margin-top: 0.8rem; font-size: 0.95rem; }
+
+  @media (max-width: 900px) {
+    .hero-grid, .how-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    .testi-grid, .trust-grid { grid-template-columns: 1fr; }
+  }
+</style>

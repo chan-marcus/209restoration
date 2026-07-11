@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../config/site';
+---
+<Base
+  title="About | 209 Restoration"
+  description="209 Restoration is a local 24/7 water damage dispatch service connecting Central Valley homeowners with licensed restoration crews in San Joaquin and Stanislaus Counties."
+>
+  <section>
+    <div class="wrap about-wrap">
+      <span class="eyebrow">Who picks up when you call</span>
+      <h1>Built for the worst night your house has</h1>
+      <p>Water damage has a cruel schedule. Pipes burst at midnight, water heaters fail over long weekends, and storms do not check business hours. Meanwhile half the restoration numbers you find at 2am ring to an out-of-state call center or a voicemail box that promises a callback.</p>
+      <p>209 Restoration exists to shortcut that. One local number, answered by a live dispatcher around the clock, connected to a network of licensed, insured restoration crews stationed across San Joaquin and Stanislaus Counties. You describe the problem, the dispatcher tells you what to shut off, and a crew from your side of the Valley rolls with extraction and drying equipment on the truck.</p>
+      <h2>How the network works</h2>
+      <p>{SITE.legalLine} Every crew in the network carries proper licensing and insurance, works to industry drying standards with documented moisture readings, and knows how to write a scope that insurance adjusters accept. The dispatch model means someone answers even when an individual shop is already out on a job, which matters most during storm weeks when the whole Valley is calling at once.</p>
+      <h2>Why local matters here</h2>
+      <p>The Central Valley gets wet in ways that outside crews misread. Delta groundwater under Stockton crawl spaces. Tuolumne floodplain edges in Modesto and Ceres. Hard-water pinhole leaks under Tracy and Manteca slabs. Whole subdivisions hitting water heater failure age in the same year. Crews who work these cities daily know where to point the moisture meter first, and that shows up in how fast your house gets dry.</p>
+      <div class="about-cta">
+        <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        <p class="mono"><span class="open-dot" aria-hidden="true"></span> OPEN NOW &middot; 24/7/365</p>
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</Base>
+
+<style>
+  .about-wrap { max-width: 46em; }
+  .about-wrap p { margin-top: 1.1rem; }
+  .about-wrap h2 { margin-top: 2.4rem; }
+  .about-cta { margin-top: 2.4rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+  .about-cta p { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; margin: 0; }
+</style>

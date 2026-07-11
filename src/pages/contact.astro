@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+---
+<Base
+  title="Contact | 24/7 Dispatch | 209 Restoration"
+  description="Reach 209 Restoration dispatch 24/7 for water damage emergencies across Stockton, Modesto, and the Central Valley. Call (209) 980-2782, open now."
+>
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Fastest path</span>
+        <h1>If there is water, call.</h1>
+        <p>An emergency is not an email. Dispatch answers the phone 24 hours a day, every day of the year, and a call gets a crew moving in minutes. Everything else on this page is for the non-urgent stuff.</p>
+        <div class="big-call">
+          <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+          <p class="mono"><span class="open-dot" aria-hidden="true"></span> OPEN NOW &middot; LIVE DISPATCHER</p>
+        </div>
+        <h2>While you wait for the crew</h2>
+        <ul class="prep">
+          <li><strong>Shut off the water</strong> at the fixture stop or the main by the sidewalk if it is still flowing.</li>
+          <li><strong>Kill power</strong> at the breaker to any room where water is near outlets or fixtures.</li>
+          <li><strong>Move what you can</strong>: electronics, documents, and furniture legs out of the wet zone.</li>
+          <li><strong>Do not run the HVAC</strong>; it spreads moisture and, in fire losses, soot.</li>
+          <li><strong>Take a few photos</strong> if it is safe. Your future claim will thank you.</li>
+        </ul>
+      </div>
+      <div class="side">
+        <div class="side-card">
+          <h3>Non-urgent questions</h3>
+          <p>Estimates, insurance paperwork questions, or scheduling an inspection for a musty smell that can wait until daylight:</p>
+          <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+        </div>
+        <div class="side-card">
+          <h3>Service region</h3>
+          <p>{SITE.serviceRegion}: Stockton, Modesto, Lodi, Tracy, Manteca, Turlock, Lathrop, Ceres, and the communities in between.</p>
+          <p><a href="/areas/">See all areas &rarr;</a></p>
+        </div>
+        <div class="side-card">
+          <h3>For restoration contractors</h3>
+          <p>Licensed and insured crew in the 209 interested in taking dispatched jobs? Email with your license number and coverage area.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; }
+  .contact-grid > div > p { margin-top: 1rem; max-width: 54ch; }
+  .big-call { margin: 2rem 0 2.5rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+  .big-call p { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; margin: 0; }
+  .prep { list-style: none; margin-top: 1.4rem; }
+  .prep li { padding: 0.55rem 0 0.55rem 1.6rem; position: relative; color: var(--silt); }
+  .prep li::before { content: '\2713'; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
+  .side { display: flex; flex-direction: column; gap: 1rem; }
+  .side-card { border: 1px solid var(--line); border-radius: 10px; padding: 1.5rem; background: var(--panel); }
+  .side-card p { margin-top: 0.5rem; font-size: 0.95rem; }
+  @media (max-width: 800px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>

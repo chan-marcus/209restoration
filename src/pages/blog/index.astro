@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base
+  title="Water Damage Guides | 209 Restoration"
+  description="Plain-language guides for Central Valley homeowners: what to do in the first hour of a water emergency, how insurance actually works, and more."
+>
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Guides</span>
+      <h1>Read now or read wet</h1>
+      <p class="lede">Plain-language answers for Valley homeowners. Best read before you need them, still useful after.</p>
+      <div class="post-list">
+        {posts.map((post) => (
+          <a class="post-card" href={`/blog/${post.slug}/`}>
+            <p class="mono post-date">{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase()}</p>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <span class="card-cta mono">READ &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</Base>
+
+<style>
+  .lede { max-width: 58ch; margin-top: 1rem; font-size: 1.1rem; }
+  .post-list { margin-top: 2.5rem; display: grid; gap: 1rem; max-width: 780px; }
+  .post-card {
+    border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+    padding: 1.8rem; text-decoration: none; display: block;
+  }
+  .post-card:hover { border-color: var(--cyan); }
+  .post-card h2 { font-size: 1.4rem; color: var(--paper); margin: 0.4rem 0 0.6rem; }
+  .post-card p { font-size: 0.97rem; }
+  .post-date { font-size: 0.65rem; }
+  .post-card .card-cta { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--cyan); }
+</style>

@@ -1,0 +1,437 @@
+---
+import { SITE } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  schema?: object[];
+}
+
+const { title, description, schema = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.domain).href;
+
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': SITE.domain + '/#business',
+  name: SITE.brand,
+  description: 'Emergency water damage restoration dispatch serving San Joaquin and Stanislaus Counties. Open 24/7.',
+  url: SITE.domain,
+  telephone: SITE.phone,
+  email: SITE.email,
+  areaServed: [
+    'Stockton CA', 'Modesto CA', 'Lodi CA', 'Tracy CA',
+    'Manteca CA', 'Turlock CA', 'Lathrop CA', 'Ceres CA'
+  ],
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE.geo.lat,
+    longitude: SITE.geo.lng
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    opens: '00:00',
+    closes: '23:59'
+  },
+  priceRange: '$$'
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0a1c2b" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={SITE.domain + '/og.png'} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+  {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/" aria-label={SITE.brand + ' home'}>
+        <svg class="logo-mark" width="34" height="40" viewBox="0 0 34 40" aria-hidden="true">
+          <path d="M17 1 C17 1 32 18.5 32 27 a15 15 0 0 1 -30 0 C2 18.5 17 1 17 1 Z" fill="none" stroke="var(--cyan)" stroke-width="2.5"/>
+          <path d="M4.5 27.5 q4 -3 8 0 t8 0 t8 0 l0 1 a13 13 0 0 1 -24.5 4 Z" fill="var(--cyan)" opacity="0.9"/>
+        </svg>
+        <span class="logo-text">209<em>Restoration</em></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/services/">Services</a>
+        <a href="/areas/">Areas</a>
+        <a href="/about/">About</a>
+        <a href="/blog/">Guides</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+      <a class="header-call" href={`tel:${SITE.phone}`}>
+        <span class="open-dot" aria-hidden="true"></span>
+        <span class="header-call-text">
+          <strong>{SITE.phoneDisplay}</strong>
+          <small>{SITE.phoneDigits} &middot; 24/7</small>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="waterline" aria-hidden="true">
+      <svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0 12 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="var(--cyan)" stroke-width="2" opacity="0.5"/></svg>
+    </div>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">209<em>Restoration</em></p>
+        <p class="footer-tag">Water damage response for the Central Valley. One call, a local crew on the way.</p>
+        <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        <p class="footer-digits">{SITE.phoneDigits}</p>
+        <p class="mono footer-hours">OPEN 24/7 &middot; NIGHTS &middot; WEEKENDS &middot; HOLIDAYS</p>
+      </div>
+      <nav aria-label="Services">
+        <p class="footer-head">Services</p>
+        <a href="/services/emergency-water-removal/">Water removal</a>
+        <a href="/services/flood-damage-cleanup/">Flood cleanup</a>
+        <a href="/services/sewage-cleanup/">Sewage cleanup</a>
+        <a href="/services/burst-pipe-cleanup/">Burst pipes</a>
+        <a href="/services/mold-remediation/">Mold remediation</a>
+        <a href="/services/">All services &rarr;</a>
+      </nav>
+      <nav aria-label="Areas">
+        <p class="footer-head">Areas</p>
+        <a href="/areas/stockton/">Stockton</a>
+        <a href="/areas/modesto/">Modesto</a>
+        <a href="/areas/lodi/">Lodi</a>
+        <a href="/areas/tracy/">Tracy</a>
+        <a href="/areas/manteca/">Manteca</a>
+        <a href="/areas/">All areas &rarr;</a>
+      </nav>
+      <nav aria-label="Company">
+        <p class="footer-head">Company</p>
+        <a href="/about/">About</a>
+        <a href="/blog/">Guides</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="wrap footer-legal">
+      <p>{SITE.legalLine}</p>
+      <p>&copy; {new Date().getFullYear()} {SITE.brand}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="call-bar" href={`tel:${SITE.phone}`}>
+    <span class="open-dot" aria-hidden="true"></span>
+    <span class="call-bar-label">Water emergency? Open now</span>
+    <strong>Call {SITE.phoneDisplay} &middot; Open 24/7</strong>
+  </a>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #f7fafb;
+    --tint: #e6f4f6;
+    --navy: #0a1c2b;
+    --navy-2: #102a3d;
+    --primary: #0d94a8;
+    --primary-deep: #0a7486;
+    --primary-bright: #67d3e0;
+    --heading: #0e2433;
+    --pulse: #10b981;
+
+    /* contextual aliases: light theme defaults */
+    --ink: var(--bg);
+    --deep: #ffffff;
+    --panel: #ffffff;
+    --cyan: var(--primary);
+    --cyan-dim: var(--primary-deep);
+    --flare: var(--primary);
+    --flare-deep: var(--primary-deep);
+    --paper: var(--heading);
+    --silt: #536674;
+    --line: #e4ebee;
+
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Inter', sans-serif;
+
+    --shadow-sm: 0 1px 2px rgba(14, 36, 51, 0.05);
+    --shadow-lg: 0 16px 44px rgba(14, 36, 51, 0.1);
+  }
+
+  /* dark surfaces re-scope the aliases */
+  .cta-panel, .site-footer, .call-bar {
+    --paper: #f2f8f9;
+    --silt: #9cb3bf;
+    --cyan: var(--primary-bright);
+    --panel: var(--navy-2);
+    --deep: var(--navy-2);
+    --line: rgba(103, 211, 224, 0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 1.03rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+
+  h1, h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.033em;
+    color: var(--paper);
+    text-wrap: balance;
+  }
+  h1 { font-size: clamp(2.6rem, 5.6vw, 4.1rem); }
+  h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
+  h3 {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
+    letter-spacing: -0.015em; color: var(--paper); line-height: 1.35;
+  }
+
+  p { color: var(--silt); }
+  strong { color: var(--paper); }
+  a { color: var(--primary-deep); }
+
+  .mono {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--primary-deep);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--tint);
+    border: 1px solid rgba(13, 148, 168, 0.22);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-deep);
+    margin-bottom: 1.4rem;
+  }
+
+  .skip {
+    position: absolute; left: -999px; top: 0;
+    background: var(--navy); color: #fff; padding: 0.6rem 1rem; z-index: 100;
+  }
+  .skip:focus { left: 0; }
+
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(228, 235, 238, 0.9);
+  }
+  .header-inner {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding-top: 0.9rem; padding-bottom: 0.9rem;
+  }
+  .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .logo-mark { width: 27px; height: 32px; }
+  .logo-text {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.32rem; color: var(--heading); letter-spacing: -0.03em;
+  }
+  .logo-text em { font-style: normal; color: var(--primary); margin-left: 0.22rem; }
+  .main-nav { display: flex; gap: 1.8rem; margin-left: auto; }
+  .main-nav a {
+    color: #43555f; text-decoration: none; font-weight: 500; font-size: 0.92rem;
+    transition: color 0.15s ease;
+  }
+  .main-nav a:hover { color: var(--heading); }
+  .header-call {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: var(--primary); color: #fff; text-decoration: none;
+    padding: 0.52rem 1.1rem; border-radius: 11px;
+    box-shadow: 0 4px 14px rgba(13, 148, 168, 0.3);
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .header-call:hover { background: var(--primary-deep); transform: translateY(-1px); }
+  .header-call-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .header-call-text strong { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #fff; letter-spacing: -0.01em; }
+  .header-call-text small { font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase; opacity: 0.85; }
+
+  .open-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--pulse); flex-shrink: 0;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55);
+    animation: pulse 2.2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+
+  /* ---------- buttons ---------- */
+  .btn-call {
+    display: inline-block;
+    background: var(--primary); color: #fff; text-decoration: none;
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+    letter-spacing: -0.01em;
+    padding: 0.95rem 1.9rem; border-radius: 13px;
+    box-shadow: 0 8px 26px rgba(13, 148, 168, 0.35);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-call:hover { background: var(--primary-deep); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(13, 148, 168, 0.4); }
+  .btn-ghost {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid var(--line); color: var(--heading); text-decoration: none;
+    font-family: var(--font-display); font-weight: 600; font-size: 0.96rem;
+    padding: 0.95rem 1.7rem; border-radius: 13px;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-ghost:hover { border-color: #c9d6db; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(14, 36, 51, 0.08); }
+
+  /* ---------- sections ---------- */
+  section { padding: 5.5rem 0; }
+  .section-deep { background: #ffffff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  .waterline { display: none; }
+
+  /* ---------- cards ---------- */
+  .card-grid {
+    display: grid; gap: 1.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    margin-top: 2.8rem;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.7rem 1.5rem;
+    text-decoration: none;
+    display: flex; flex-direction: column; gap: 0.7rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(13, 148, 168, 0.35);
+  }
+  .card h3 { font-size: 1.12rem; }
+  .card p { font-size: 0.92rem; line-height: 1.6; }
+  .card .card-cta {
+    margin-top: auto;
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 0.8rem; letter-spacing: 0.01em; text-transform: none;
+    color: var(--primary-deep);
+  }
+  .card svg {
+    width: 44px; height: 44px;
+    background: var(--tint);
+    border-radius: 12px;
+    padding: 9px;
+  }
+
+  /* ---------- footer ---------- */
+  .site-footer { background: var(--navy); margin-top: 5rem; padding-bottom: 6rem; }
+  .footer-grid {
+    display: grid; gap: 2.5rem;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 4.2rem 1.5rem 2.4rem;
+  }
+  .footer-brand {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.5rem; color: var(--paper); letter-spacing: -0.03em;
+  }
+  .footer-brand em { font-style: normal; color: var(--primary-bright); margin-left: 0.22rem; }
+  .footer-tag { margin: 0.8rem 0 1.5rem; max-width: 34ch; font-size: 0.95rem; }
+  .footer-digits { margin-top: 0.8rem; font-size: 0.85rem; color: #7a94a3; letter-spacing: 0.03em; }
+  .footer-hours { margin-top: 0.5rem; font-size: 0.66rem; color: var(--primary-bright); letter-spacing: 0.12em; }
+  .footer-head {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #7a94a3; margin-bottom: 1rem;
+  }
+  .site-footer nav a {
+    display: block; color: var(--silt); text-decoration: none;
+    padding: 0.3rem 0; font-size: 0.93rem;
+    transition: color 0.15s ease;
+  }
+  .site-footer nav a:hover { color: var(--paper); }
+  .site-footer .btn-call { background: var(--primary); }
+  .footer-legal { border-top: 1px solid rgba(103, 211, 224, 0.12); padding-top: 1.6rem; padding-bottom: 1.6rem; }
+  .footer-legal p { font-size: 0.78rem; color: #64808f; max-width: 75ch; }
+  .footer-legal p + p { margin-top: 0.6rem; }
+
+  /* ---------- fixed mobile call bar ---------- */
+  .call-bar {
+    position: fixed; bottom: 0.9rem; left: 0.9rem; right: 0.9rem; z-index: 60;
+    display: none;
+    align-items: center; justify-content: center; gap: 0.7rem;
+    background: var(--navy);
+    color: #fff; text-decoration: none;
+    padding: 0.85rem 1.1rem;
+    text-align: center;
+    border: 1px solid rgba(103, 211, 224, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(10, 28, 43, 0.45);
+  }
+  .call-bar-label {
+    display: none;
+  }
+  .call-bar strong {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #fff;
+    line-height: 1; letter-spacing: -0.01em;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .main-nav { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .header-call { padding: 0.45rem 0.9rem; }
+    .header-call-text small { display: none; }
+    .call-bar { display: flex; }
+    section { padding: 3.6rem 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    body { padding-bottom: 4.5rem; }
+  }
+</style>

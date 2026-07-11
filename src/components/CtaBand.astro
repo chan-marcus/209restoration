@@ -1,0 +1,65 @@
+---
+import { SITE } from '../config/site';
+interface Props { heading?: string; sub?: string }
+const {
+  heading = 'Water in your home right now?',
+  sub = 'One call. A dispatcher answers, a local crew rolls. Open 24/7 across the 209.'
+} = Astro.props;
+---
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div>
+        <h2>{heading}</h2>
+        <p>{sub}</p>
+      </div>
+      <div class="cta-actions">
+        <a class="cta-btn" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        <p class="cta-open"><span class="open-dot" aria-hidden="true"></span> Open now &middot; 24/7 dispatch</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band { padding: 2rem 0; }
+  .cta-panel {
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    border: 1px solid rgba(103, 211, 224, 0.16);
+    border-radius: 24px;
+    padding: 3.4rem 3.2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2.5rem; flex-wrap: wrap;
+  }
+  .cta-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(560px 320px at 12% -10%, rgba(13, 148, 168, 0.35), transparent 65%),
+      radial-gradient(480px 300px at 95% 115%, rgba(103, 211, 224, 0.16), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-panel > * { position: relative; }
+  .cta-panel h2 { color: #f2f8f9; max-width: 22ch; }
+  .cta-panel p { margin-top: 0.7rem; max-width: 46ch; color: #9cb3bf; }
+  .cta-actions { text-align: center; }
+  .cta-btn {
+    display: inline-block;
+    background: #ffffff; color: var(--navy); text-decoration: none;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    padding: 1rem 2.1rem; border-radius: 13px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0, 0, 0, 0.4); }
+  .cta-open {
+    margin-top: 1rem; display: flex; align-items: center; justify-content: center;
+    gap: 0.5rem; font-size: 0.78rem; font-weight: 500; color: #9cb3bf !important;
+  }
+  @media (max-width: 700px) {
+    .cta-panel { padding: 2.4rem 1.6rem; }
+  }
+</style>
