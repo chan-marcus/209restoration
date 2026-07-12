@@ -8,7 +8,7 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 <Base
-  title="Water Damage Guides | 209 Restoration"
+  title="209 Restoration | Water Damage Guides"
   description="Plain-language guides for Central Valley homeowners: what to do in the first hour of a water emergency, how insurance actually works, and more."
 >
   <section>
@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
             <p class="mono post-date">{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase()}</p>
             <h2>{post.data.title}</h2>
             <p>{post.data.description}</p>
-            <span class="card-cta mono">READ &rarr;</span>
+            <span class="card-cta mono">Read guide &rarr;</span>
           </a>
         ))}
       </div>
@@ -35,12 +35,18 @@ const posts = (await getCollection('blog')).sort(
   .lede { max-width: 58ch; margin-top: 1rem; font-size: 1.1rem; }
   .post-list { margin-top: 2.5rem; display: grid; gap: 1rem; max-width: 780px; }
   .post-card {
-    border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+    border: 1px solid var(--line); border-radius: 16px; background: #ffffff;
     padding: 1.8rem; text-decoration: none; display: block;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   }
-  .post-card:hover { border-color: var(--cyan); }
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(13, 148, 168, 0.35);
+  }
   .post-card h2 { font-size: 1.4rem; color: var(--paper); margin: 0.4rem 0 0.6rem; }
-  .post-card p { font-size: 0.97rem; }
+  .post-card p { font-size: 0.97rem; color: #43555f; }
   .post-date { font-size: 0.65rem; }
-  .post-card .card-cta { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--cyan); }
+  .post-card .card-cta { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.01em; text-transform: none; font-weight: 600; color: var(--cyan); }
 </style>

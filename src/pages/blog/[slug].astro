@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
-<Base title={`${post.data.title} | 209 Restoration`} description={post.data.description}>
+<Base title={`209 Restoration | ${post.data.title}`} description={post.data.description}>
   <section>
     <div class="wrap">
       <nav class="crumbs mono" aria-label="Breadcrumb">
@@ -36,10 +36,10 @@ const { Content } = await post.render();
   .post-date { font-size: 0.65rem; margin-bottom: 0.8rem; }
   .post { max-width: 44em; margin-bottom: 2.5rem; }
   .post h1 { text-transform: none; font-stretch: 95%; font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
-  .post :global(h2) { margin-top: 1.8em; text-transform: none; font-stretch: 100%; font-size: 1.45rem; }
-  .post :global(p) { margin-top: 1em; color: #c7d5d8; }
+  .post :global(h2) { margin-top: 1.9em; margin-bottom: 0.5em; text-transform: none; font-stretch: 100%; font-size: 1.45rem; }
+  .post :global(p) { margin-top: 1em; color: #33454f; font-size: 1.04rem; line-height: 1.8; }
   .post :global(ul), .post :global(ol) { padding-left: 1.3em; margin-top: 0.8em; }
-  .post :global(li) { margin-top: 0.45em; color: #c7d5d8; }
+  .post :global(li) { margin-top: 0.5em; color: #33454f; line-height: 1.75; }
   .post :global(li strong), .post :global(p strong) { color: var(--paper); }
   .post :global(a) { color: var(--cyan); }
 </style>
