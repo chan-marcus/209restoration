@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import MapEmbed from '../components/MapEmbed.astro';
 import { SITE } from '../config/site';
 ---
 <Base
@@ -34,6 +35,12 @@ import { SITE } from '../config/site';
         <div class="side-card">
           <h3>Service region</h3>
           <p>{SITE.serviceRegion}: Stockton, Modesto, Lodi, Tracy, Manteca, Turlock, Lathrop, Ceres, and the communities in between.</p>
+          <MapEmbed
+            query={`${SITE.anchorCity}, ${SITE.anchorState}`}
+            zoom={9}
+            title={`Map of the ${SITE.brand} service region across ${SITE.serviceRegion}`}
+            caption={`Dispatching across ${SITE.serviceRegion}`}
+          />
           <p><a href="/areas/">See all areas &rarr;</a></p>
         </div>
         <div class="side-card">

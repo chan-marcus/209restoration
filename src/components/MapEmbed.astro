@@ -1,0 +1,54 @@
+---
+// Reusable Google Maps embed. Uses the keyless embed endpoint so it works
+// with no API key or billing account — right for a template. To switch to the
+// official Maps Embed API, swap `src` for
+// `https://www.google.com/maps/embed/v1/place?key=YOUR_KEY&q=...&zoom=...`.
+interface Props {
+  query: string;           // place or area to show, e.g. "Stockton, CA"
+  zoom?: number;           // 1 (world) - 20 (building); ~11 shows a city
+  title: string;           // accessible label for the map iframe
+  caption?: string;        // optional line under the map
+}
+const { query, zoom = 11, title, caption } = Astro.props;
+const src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${zoom}&output=embed`;
+---
+<figure class="map-embed">
+  <div class="map-frame">
+    <iframe
+      src={src}
+      title={title}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {caption && <figcaption class="mono">{caption}</figcaption>}
+</figure>
+
+<style>
+  .map-embed { margin: 0; }
+  .map-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(14, 36, 51, 0.12);
+    box-shadow: 0 24px 64px rgba(14, 36, 51, 0.18);
+    background: var(--panel);
+  }
+  .map-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  figcaption {
+    margin-top: 0.8rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--silt);
+    text-transform: uppercase;
+  }
+</style>
