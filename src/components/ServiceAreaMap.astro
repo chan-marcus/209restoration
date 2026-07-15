@@ -1,0 +1,110 @@
+---
+// Interactive service-area map (Maps JavaScript API). Highlights every city
+// we serve with a coverage circle + marker and fits the view to all of them.
+// Needs PUBLIC_GOOGLE_MAPS_API_KEY with the Maps JavaScript API enabled and
+// allowed on the key. Falls back to a keyless iframe of the region when no key
+// is present, so local dev without a key still renders something.
+import MapEmbed from './MapEmbed.astro';
+import { CITIES } from '../data/cities';
+import { SITE } from '../config/site';
+
+interface Props {
+  title: string;     // accessible label
+  caption?: string;
+}
+const { title, caption } = Astro.props;
+const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, lng: c.lng }));
+---
+{apiKey ? (
+  <figure class="map-embed">
+    <div class="map-frame">
+      <div id="service-area-map" class="js-map" role="application" aria-label={title}></div>
+    </div>
+    {caption && <figcaption class="mono">{caption}</figcaption>}
+  </figure>
+
+  <script define:vars={{ apiKey, areas }}>
+    // Brand colors pulled to match the site's cyan accent.
+    const FILL = '#3ec6d8';
+    const STROKE = '#0d94a8';
+    const RADIUS_M = 8500; // per-city coverage radius; overlaps read as one region
+
+    window.initServiceAreaMap = function () {
+      const el = document.getElementById('service-area-map');
+      if (!el) return;
+      const map = new google.maps.Map(el, {
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        clickableIcons: false,
+        styles: [
+          { featureType: 'poi', stylers: [{ visibility: 'off' }] },
+          { featureType: 'transit', stylers: [{ visibility: 'off' }] }
+        ]
+      });
+
+      const bounds = new google.maps.LatLngBounds();
+      areas.forEach((a) => {
+        const center = { lat: a.lat, lng: a.lng };
+        const circle = new google.maps.Circle({
+          map,
+          center,
+          radius: RADIUS_M,
+          strokeColor: STROKE,
+          strokeOpacity: 0.9,
+          strokeWeight: 1.5,
+          fillColor: FILL,
+          fillOpacity: 0.22
+        });
+        new google.maps.Marker({
+          map,
+          position: center,
+          title: a.name + ' — ' + a.county,
+          label: { text: a.name, fontSize: '11px', fontWeight: '600', color: '#0e2433' }
+        });
+        bounds.union(circle.getBounds());
+      });
+      map.fitBounds(bounds, 24);
+    };
+
+    (function loadMaps() {
+      if (window.google && window.google.maps) { window.initServiceAreaMap(); return; }
+      if (document.getElementById('gmaps-js')) return; // already loading
+      const s = document.createElement('script');
+      s.id = 'gmaps-js';
+      s.async = true;
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(apiKey) +
+              '&callback=initServiceAreaMap&loading=async';
+      document.head.appendChild(s);
+    })();
+  </script>
+) : (
+  <MapEmbed
+    query={`${SITE.anchorCity}, ${SITE.anchorState}`}
+    zoom={9}
+    title={title}
+    caption={caption}
+  />
+)}
+
+<style>
+  .map-embed { margin: 0; }
+  .map-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(14, 36, 51, 0.12);
+    box-shadow: 0 24px 64px rgba(14, 36, 51, 0.18);
+    background: var(--panel);
+  }
+  .js-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+  figcaption {
+    margin-top: 0.8rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--silt);
+    text-transform: uppercase;
+  }
+</style>

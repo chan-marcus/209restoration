@@ -1,8 +1,10 @@
 ---
-// Reusable Google Maps embed. Uses the keyless embed endpoint so it works
-// with no API key or billing account — right for a template. To switch to the
-// official Maps Embed API, swap `src` for
-// `https://www.google.com/maps/embed/v1/place?key=YOUR_KEY&q=...&zoom=...`.
+// Reusable Google Maps embed.
+// Prefers the official Maps Embed API when PUBLIC_GOOGLE_MAPS_API_KEY is set
+// (in .env locally and in the host's env vars for production). The key is
+// public by nature — it ships in the iframe URL — so restrict it to your
+// domains with an HTTP referrer restriction in the Google Cloud console.
+// Falls back to the keyless embed when no key is present, so dev still works.
 interface Props {
   query: string;           // place or area to show, e.g. "Stockton, CA"
   zoom?: number;           // 1 (world) - 20 (building); ~11 shows a city
@@ -10,7 +12,10 @@ interface Props {
   caption?: string;        // optional line under the map
 }
 const { query, zoom = 11, title, caption } = Astro.props;
-const src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${zoom}&output=embed`;
+const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+const src = apiKey
+  ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(query)}&zoom=${zoom}`
+  : `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${zoom}&output=embed`;
 ---
 <figure class="map-embed">
   <div class="map-frame">

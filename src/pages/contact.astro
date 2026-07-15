@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import MapEmbed from '../components/MapEmbed.astro';
+import ServiceAreaMap from '../components/ServiceAreaMap.astro';
 import { SITE } from '../config/site';
 ---
 <Base
@@ -49,11 +49,9 @@ import { SITE } from '../config/site';
     <div class="wrap">
       <span class="eyebrow">Where we work</span>
       <h2>Service area</h2>
-      <p class="map-lede">Local crews dispatch across {SITE.serviceRegion}, from {SITE.anchorCity} out to the communities in between. If you are inside this area, someone can be rolling within minutes.</p>
-      <MapEmbed
-        query={`${SITE.anchorCity}, ${SITE.anchorState}`}
-        zoom={9}
-        title={`Map of the ${SITE.brand} service region across ${SITE.serviceRegion}`}
+      <p class="map-lede">Local crews dispatch across {SITE.serviceRegion}, from {SITE.anchorCity} out to the communities in between. If you are inside a highlighted zone, someone can be rolling within minutes.</p>
+      <ServiceAreaMap
+        title={`Map highlighting the ${SITE.brand} service areas across ${SITE.serviceRegion}`}
         caption={`Dispatching across ${SITE.serviceRegion}`}
       />
     </div>
