@@ -36,6 +36,18 @@ const baseSchema = {
   },
   priceRange: '$$'
 };
+
+// WebSite schema gives Google an explicit site name for the homepage title
+// link, so results show "209 Restoration" instead of the bare domain.
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': SITE.domain + '/#website',
+  name: SITE.brand,
+  alternateName: '209 Restoration Water Damage',
+  url: SITE.domain + '/',
+  publisher: { '@id': SITE.domain + '/#business' }
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -54,11 +66,13 @@ const baseSchema = {
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content={SITE.brand} />
   <meta property="og:image" content={SITE.domain + '/og.png'} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 </head>
 <body>
