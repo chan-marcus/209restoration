@@ -1,12 +1,14 @@
 ---
-// Interactive service-area map (Maps JavaScript API). Highlights every city
-// we serve with a coverage circle + marker and fits the view to all of them.
+// Interactive service-area map (Maps JavaScript API). Shades the whole service
+// region — San Joaquin and Stanislaus Counties — and marks the named cities
+// inside it, fitting the view to the full coverage.
 // Needs PUBLIC_GOOGLE_MAPS_API_KEY with the Maps JavaScript API enabled and
 // allowed on the key. Falls back to a keyless iframe of the region when no key
 // is present, so local dev without a key still renders something.
 import MapEmbed from './MapEmbed.astro';
 import { CITIES } from '../data/cities';
 import { SITE } from '../config/site';
+import serviceAreaGeoJson from '../data/service-area.geojson.json';
 
 interface Props {
   title: string;     // accessible label
@@ -24,11 +26,10 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
     {caption && <figcaption class="mono">{caption}</figcaption>}
   </figure>
 
-  <script define:vars={{ apiKey, areas }}>
+  <script define:vars={{ apiKey, areas, geojson: serviceAreaGeoJson }}>
     // Brand colors pulled to match the site's cyan accent.
     const FILL = '#3ec6d8';
     const STROKE = '#0d94a8';
-    const RADIUS_M = 8500; // per-city coverage radius; overlaps read as one region
 
     window.initServiceAreaMap = function () {
       const el = document.getElementById('service-area-map');
@@ -44,27 +45,33 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
         ]
       });
 
+      // Shade the whole service region (the two counties).
+      map.data.addGeoJson(geojson);
+      map.data.setStyle({
+        fillColor: FILL,
+        fillOpacity: 0.2,
+        strokeColor: STROKE,
+        strokeOpacity: 0.9,
+        strokeWeight: 2,
+        clickable: false
+      });
+
+      // Fit the view to the full shaded coverage.
       const bounds = new google.maps.LatLngBounds();
+      map.data.forEach((feature) => {
+        feature.getGeometry().forEachLatLng((ll) => bounds.extend(ll));
+      });
+
+      // Mark the named cities inside the region for orientation.
       areas.forEach((a) => {
-        const center = { lat: a.lat, lng: a.lng };
-        const circle = new google.maps.Circle({
-          map,
-          center,
-          radius: RADIUS_M,
-          strokeColor: STROKE,
-          strokeOpacity: 0.9,
-          strokeWeight: 1.5,
-          fillColor: FILL,
-          fillOpacity: 0.22
-        });
         new google.maps.Marker({
           map,
-          position: center,
+          position: { lat: a.lat, lng: a.lng },
           title: a.name + ' — ' + a.county,
           label: { text: a.name, fontSize: '11px', fontWeight: '600', color: '#0e2433' }
         });
-        bounds.union(circle.getBounds());
       });
+
       map.fitBounds(bounds, 24);
     };
 
