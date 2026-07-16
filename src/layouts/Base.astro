@@ -73,12 +73,13 @@ const baseSchema = {
         </svg>
         <span class="logo-text">209<em>Restoration</em></span>
       </a>
-      <nav class="main-nav" aria-label="Main">
+      <nav class="main-nav" id="primary-nav" aria-label="Main">
         <a href="/services/">Services</a>
         <a href="/areas/">Areas</a>
         <a href="/about/">About</a>
         <a href="/blog/">Guides</a>
         <a href="/contact/">Contact</a>
+        <a class="menu-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
       </nav>
       <a class="header-call" href={`tel:${SITE.phone}`}>
         <span class="open-dot" aria-hidden="true"></span>
@@ -87,8 +88,32 @@ const baseSchema = {
           <small>{SITE.phoneDigits} &middot; 24/7</small>
         </span>
       </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
+
+  <script>
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    if (header && toggle) {
+      const setOpen = (open) => {
+        header.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      toggle.addEventListener('click', () => setOpen(!header.classList.contains('nav-open')));
+      // Close after tapping a nav link, on Escape, or when widening to desktop.
+      document.getElementById('primary-nav')?.addEventListener('click', (e) => {
+        if (e.target instanceof Element && e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+      window.addEventListener('resize', () => { if (window.innerWidth > 900) setOpen(false); });
+    }
+  </script>
 
   <main id="main">
     <slot />
@@ -282,6 +307,7 @@ const baseSchema = {
     transition: color 0.15s ease;
   }
   .main-nav a:hover { color: var(--heading); }
+  .menu-call { display: none; }
   .header-call {
     display: flex; align-items: center; gap: 0.6rem;
     background: var(--primary); color: #fff; text-decoration: none;
@@ -291,8 +317,29 @@ const baseSchema = {
   }
   .header-call:hover { background: var(--primary-deep); transform: translateY(-1px); }
   .header-call-text { display: flex; flex-direction: column; line-height: 1.15; }
-  .header-call-text strong { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #fff; letter-spacing: -0.01em; }
+  .header-call-text strong { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #fff; letter-spacing: -0.01em; white-space: nowrap; }
   .header-call-text small { font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase; opacity: 0.85; }
+
+  /* hamburger toggle (mobile only) */
+  .nav-toggle {
+    display: none;
+    flex-direction: column; justify-content: center; align-items: center;
+    gap: 5px;
+    width: 44px; height: 44px; flex-shrink: 0;
+    padding: 0 11px;
+    background: #ffffff;
+    border: 1px solid var(--line); border-radius: 11px;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+  }
+  .nav-toggle-bar {
+    display: block; width: 100%; height: 2px; border-radius: 2px;
+    background: var(--heading);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .site-header.nav-open .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-header.nav-open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+  .site-header.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   .open-dot {
     width: 8px; height: 8px; border-radius: 50%;
@@ -423,12 +470,43 @@ const baseSchema = {
 
   /* ---------- responsive ---------- */
   @media (max-width: 900px) {
-    .main-nav { display: none; }
+    .nav-toggle { display: flex; }
+    .header-call { margin-left: auto; }
+    /* nav becomes a dropdown panel under the sticky header */
+    .main-nav {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+      padding: 0.4rem 1.5rem 1rem;
+      max-height: calc(100vh - 100%);
+      overflow-y: auto;
+      /* hidden by default; revealed via .nav-open */
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+    }
+    .site-header.nav-open .main-nav {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .main-nav a {
+      padding: 0.9rem 0.2rem; font-size: 1.05rem; color: var(--heading);
+      border-bottom: 1px solid var(--line);
+    }
+    .main-nav .menu-call {
+      display: block; margin-top: 0.8rem; padding: 0.85rem;
+      background: var(--primary); color: #fff; border-bottom: 0;
+      text-align: center; border-radius: 11px;
+      font-family: var(--font-display); font-weight: 700;
+    }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
-    .header-call { padding: 0.45rem 0.9rem; }
-    .header-call-text small { display: none; }
+    .header-inner { gap: 0.6rem; padding-left: 1.1rem; padding-right: 1.1rem; }
+    .logo-text { font-size: 1.2rem; }
+    /* header phone is redundant with the fixed bottom call bar here */
+    .header-call { display: none; }
+    .nav-toggle { width: 40px; height: 40px; padding: 0 10px; margin-left: auto; }
     .call-bar { display: flex; }
     section { padding: 3.6rem 0; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
