@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-labelledby="wcTitle wcDesc" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="wcTitle">The three categories of water damage and their cost impact</title>
+  <desc id="wcDesc">Three panels: category 1 clean water from supply lines at baseline cost, category 2 gray water from appliances at 1.3 to 1.5 times cost, category 3 black water from sewage at 2 to 3 times cost.</desc>
+  <rect width="760" height="260" rx="16" fill="#ffffff"/>
+  <rect width="760" height="260" rx="16" fill="none" stroke="#e4ebee"/>
+  <g>
+    <rect x="28" y="28" width="222" height="204" rx="14" fill="#f2fafb" stroke="#cdeef2"/>
+    <path d="M139 52 C139 52 158 74 158 85 a19 19 0 0 1 -38 0 C120 74 139 52 139 52 Z" fill="#31aebf"/>
+    <text x="139" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#0e2433">Category 1 &#183; Clean</text>
+    <text x="139" y="158" text-anchor="middle" font-size="12" fill="#54707c">Supply lines, rain intrusion</text>
+    <text x="139" y="200" text-anchor="middle" font-size="17" font-weight="700" fill="#0a7486">Baseline cost</text>
+  </g>
+  <g>
+    <rect x="269" y="28" width="222" height="204" rx="14" fill="#f6f6ef" stroke="#e3e2c9"/>
+    <path d="M380 52 C380 52 399 74 399 85 a19 19 0 0 1 -38 0 C361 74 380 52 380 52 Z" fill="#9a9a55"/>
+    <text x="380" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#0e2433">Category 2 &#183; Gray</text>
+    <text x="380" y="158" text-anchor="middle" font-size="12" fill="#54707c">Washer, dishwasher overflow</text>
+    <text x="380" y="200" text-anchor="middle" font-size="17" font-weight="700" fill="#7a7a35">1.3&#8211;1.5&#215; cost</text>
+  </g>
+  <g>
+    <rect x="510" y="28" width="222" height="204" rx="14" fill="#f8f2f1" stroke="#e8d3cf"/>
+    <path d="M621 52 C621 52 640 74 640 85 a19 19 0 0 1 -38 0 C602 74 621 52 621 52 Z" fill="#7d4a3f"/>
+    <text x="621" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#0e2433">Category 3 &#183; Black</text>
+    <text x="621" y="158" text-anchor="middle" font-size="12" fill="#54707c">Sewage, rising floodwater</text>
+    <text x="621" y="200" text-anchor="middle" font-size="17" font-weight="700" fill="#8c4437">2&#8211;3&#215; cost</text>
+  </g>
+</svg>

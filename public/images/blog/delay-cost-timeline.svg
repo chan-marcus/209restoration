@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" role="img" aria-labelledby="dcTitle dcDesc" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="dcTitle">How delay multiplies water damage cost</title>
+  <desc id="dcDesc">Timeline: hour one water in carpet, dry-out pricing. Day one, in baseboards and wall cavities, demolition begins. Day two to three, subfloor saturated, flooring replacement. Day four plus, mold growth in Valley heat, remediation pricing.</desc>
+  <rect width="760" height="250" rx="16" fill="#ffffff"/>
+  <rect width="760" height="250" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="36" y="46" font-size="19" font-weight="700" fill="#0e2433" letter-spacing="-0.3">Speed decides cost</text>
+  <line x1="60" y1="120" x2="700" y2="120" stroke="#e4ebee" stroke-width="3"/>
+  <g>
+    <circle cx="100" cy="120" r="10" fill="#0d94a8"/>
+    <circle cx="280" cy="120" r="10" fill="#31aebf"/>
+    <circle cx="460" cy="120" r="10" fill="#9a9a55"/>
+    <circle cx="640" cy="120" r="10" fill="#8c4437"/>
+  </g>
+  <g font-size="13.5" font-weight="700" fill="#0e2433" text-anchor="middle">
+    <text x="100" y="95">Hour 1</text>
+    <text x="280" y="95">Day 1</text>
+    <text x="460" y="95">Day 2&#8211;3</text>
+    <text x="640" y="95">Day 4+</text>
+  </g>
+  <g font-size="12" fill="#54707c" text-anchor="middle">
+    <text x="100" y="152">Water in carpet</text>
+    <text x="100" y="170" font-weight="600" fill="#0a7486">Dry-out pricing</text>
+    <text x="280" y="152">Baseboards, wall cavities</text>
+    <text x="280" y="170" font-weight="600" fill="#0a7486">Flood cuts begin</text>
+    <text x="460" y="152">Subfloor saturated</text>
+    <text x="460" y="170" font-weight="600" fill="#7a7a35">Flooring replacement</text>
+    <text x="640" y="152">Mold in Valley heat</text>
+    <text x="640" y="170" font-weight="600" fill="#8c4437">Remediation pricing</text>
+  </g>
+  <text x="36" y="222" font-size="11" fill="#7a919d">Same leak, different phone-call timing. Central Valley summer heat accelerates every stage.</text>
+</svg>

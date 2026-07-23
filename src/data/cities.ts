@@ -4,8 +4,6 @@ export interface City {
   slug: string;
   name: string;
   county: string;
-  lat: number;           // city center, for the service-area map
-  lng: number;
   short: string;         // card blurb
   h1: string;
   intro: string[];       // paragraphs with real local geography
@@ -18,7 +16,6 @@ export const CITIES: City[] = [
     slug: 'stockton',
     name: 'Stockton',
     county: 'San Joaquin County',
-    lat: 37.9577, lng: -121.2908,
     short: 'Delta waterfront, high water tables, and a lot of older raised-foundation housing stock.',
     h1: 'Water Damage Restoration in Stockton, CA',
     intro: [
@@ -36,7 +33,6 @@ export const CITIES: City[] = [
     slug: 'modesto',
     name: 'Modesto',
     county: 'Stanislaus County',
-    lat: 37.6391, lng: -120.9969,
     short: 'Tuolumne River and Dry Creek flooding, plus mid-century housing with aging supply lines.',
     h1: 'Water Damage Restoration in Modesto, CA',
     intro: [
@@ -54,7 +50,6 @@ export const CITIES: City[] = [
     slug: 'lodi',
     name: 'Lodi',
     county: 'San Joaquin County',
-    lat: 38.1302, lng: -121.2724,
     short: 'Mokelumne River town with a historic east side and wine-country well water.',
     h1: 'Water Damage Restoration in Lodi, CA',
     intro: [
@@ -72,7 +67,6 @@ export const CITIES: City[] = [
     slug: 'tracy',
     name: 'Tracy',
     county: 'San Joaquin County',
-    lat: 37.7397, lng: -121.4252,
     short: 'Fast-growing slab-built city where hard water and builder-grade plumbing meet.',
     h1: 'Water Damage Restoration in Tracy, CA',
     intro: [
@@ -90,7 +84,6 @@ export const CITIES: City[] = [
     slug: 'manteca',
     name: 'Manteca',
     county: 'San Joaquin County',
-    lat: 37.7974, lng: -121.2161,
     short: 'Bypass-corridor growth city with garage water heaters and same-age tract plumbing.',
     h1: 'Water Damage Restoration in Manteca, CA',
     intro: [
@@ -108,7 +101,6 @@ export const CITIES: City[] = [
     slug: 'turlock',
     name: 'Turlock',
     county: 'Stanislaus County',
-    lat: 37.4947, lng: -120.8466,
     short: 'College town on flat ground where storm water has nowhere to go but sideways.',
     h1: 'Water Damage Restoration in Turlock, CA',
     intro: [
@@ -126,7 +118,6 @@ export const CITIES: City[] = [
     slug: 'lathrop',
     name: 'Lathrop',
     county: 'San Joaquin County',
-    lat: 37.8227, lng: -121.2766,
     short: 'River Islands and levee-adjacent growth, the newest housing in the 209 next to the most water.',
     h1: 'Water Damage Restoration in Lathrop, CA',
     intro: [
@@ -144,7 +135,6 @@ export const CITIES: City[] = [
     slug: 'ceres',
     name: 'Ceres',
     county: 'Stanislaus County',
-    lat: 37.5949, lng: -120.9577,
     short: 'Hatch Road corridor ranch homes and the Tuolumne floodplain on the north edge.',
     h1: 'Water Damage Restoration in Ceres, CA',
     intro: [

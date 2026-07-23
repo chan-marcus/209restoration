@@ -1,10 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import ServiceAreaMap from '../components/ServiceAreaMap.astro';
 import { SITE } from '../config/site';
 ---
 <Base
-  title="Contact | 24/7 Dispatch | 209 Restoration"
+  title="209 Restoration | Contact | 24/7 Dispatch"
   description="Reach 209 Restoration dispatch 24/7 for water damage emergencies across Stockton, Modesto, and the Central Valley. Call (209) 980-2782, open now."
 >
   <section>
@@ -44,18 +43,6 @@ import { SITE } from '../config/site';
       </div>
     </div>
   </section>
-
-  <section class="section-deep map-section">
-    <div class="wrap">
-      <span class="eyebrow">Where we work</span>
-      <h2>Service area</h2>
-      <p class="map-lede">Local crews dispatch across {SITE.serviceRegion}, from {SITE.anchorCity} out to the communities in between. If you are inside a highlighted zone, someone can be rolling within minutes.</p>
-      <ServiceAreaMap
-        title={`Map highlighting the ${SITE.brand} service areas across ${SITE.serviceRegion}`}
-        caption={`Dispatching across ${SITE.serviceRegion}`}
-      />
-    </div>
-  </section>
 </Base>
 
 <style>
@@ -69,9 +56,6 @@ import { SITE } from '../config/site';
   .side { display: flex; flex-direction: column; gap: 1rem; }
   .side-card { border: 1px solid var(--line); border-radius: 10px; padding: 1.5rem; background: var(--panel); }
   .side-card p { margin-top: 0.5rem; font-size: 0.95rem; }
-  .map-section { margin-top: 1rem; }
-  .map-lede { max-width: 60ch; margin: 1rem 0 2rem; }
-  .map-section :global(.map-frame) { max-width: 960px; }
   @media (max-width: 800px) {
     .contact-grid { grid-template-columns: 1fr; }
   }

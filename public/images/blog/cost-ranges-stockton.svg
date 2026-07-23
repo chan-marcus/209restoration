@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="crTitle crDesc" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="crTitle">Typical water damage restoration cost ranges in Stockton, 2026</title>
+  <desc id="crDesc">Floating bar chart showing price ranges: one-room dry-out 1,200 to 3,500 dollars, multi-room 3,000 to 7,500, sewage cleanup 5,000 to 15,000 plus, mold remediation 1,500 to 6,000, crawl space 2,000 to 6,000.</desc>
+  <rect width="760" height="430" rx="16" fill="#ffffff"/>
+  <rect width="760" height="430" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="36" y="46" font-size="19" font-weight="700" fill="#0e2433" letter-spacing="-0.3">Typical restoration cost ranges &#183; Stockton area, 2026</text>
+  <!-- gridlines: x scale 0-16k mapped 210->710 (31.25px per 1k) -->
+  <g stroke="#eef3f4" stroke-width="1">
+    <line x1="210" y1="70" x2="210" y2="360"/><line x1="335" y1="70" x2="335" y2="360"/>
+    <line x1="460" y1="70" x2="460" y2="360"/><line x1="585" y1="70" x2="585" y2="360"/>
+    <line x1="710" y1="70" x2="710" y2="360"/>
+  </g>
+  <g font-size="11.5" fill="#7a919d">
+    <text x="210" y="382" text-anchor="middle">$0</text>
+    <text x="335" y="382" text-anchor="middle">$4k</text>
+    <text x="460" y="382" text-anchor="middle">$8k</text>
+    <text x="585" y="382" text-anchor="middle">$12k</text>
+    <text x="710" y="382" text-anchor="middle">$16k</text>
+  </g>
+  <g font-size="13.5" fill="#33454f">
+    <text x="196" y="102" text-anchor="end">One-room dry-out</text>
+    <text x="196" y="160" text-anchor="end">Multi-room / flooring</text>
+    <text x="196" y="218" text-anchor="end">Sewage cleanup</text>
+    <text x="196" y="276" text-anchor="end">Mold remediation</text>
+    <text x="196" y="334" text-anchor="end">Crawl space</text>
+  </g>
+  <!-- bars: x = 210 + k*31.25 -->
+  <g rx="8">
+    <rect x="247.5" y="86"  width="72"  height="24" rx="8" fill="#0d94a8"/>
+    <rect x="303.75" y="144" width="140.5" height="24" rx="8" fill="#0d94a8"/>
+    <rect x="366.25" y="202" width="312.5" height="24" rx="8" fill="#0a7486"/>
+    <rect x="256.9" y="260" width="140.6" height="24" rx="8" fill="#31aebf"/>
+    <rect x="272.5" y="318" width="125"  height="24" rx="8" fill="#31aebf"/>
+  </g>
+  <g font-size="11.5" font-weight="600" fill="#0a7486">
+    <text x="327" y="103">$1.2k&#8211;$3.5k</text>
+    <text x="452" y="161">$3k&#8211;$7.5k</text>
+    <text x="686" y="219">$5k&#8211;$15k+</text>
+    <text x="405" y="277">$1.5k&#8211;$6k</text>
+    <text x="405" y="335">$2k&#8211;$6k</text>
+  </g>
+  <text x="36" y="412" font-size="11" fill="#7a919d">Mitigation and drying only. Rebuild (drywall, flooring, cabinets) is a separate line.</text>
+</svg>
