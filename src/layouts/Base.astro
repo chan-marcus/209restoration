@@ -80,9 +80,6 @@ const baseSchema = {
         <a href="/blog/">Guides</a>
         <a href="/contact/">Contact</a>
       </nav>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span><span></span><span></span>
-      </button>
       <a class="header-call" href={`tel:${SITE.phone}`}>
         <span class="open-dot" aria-hidden="true"></span>
         <span class="header-call-text">
@@ -90,6 +87,9 @@ const baseSchema = {
           <small>{SITE.phoneDigits} &middot; 24/7</small>
         </span>
       </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -320,7 +320,7 @@ const baseSchema = {
   }
   .header-call:hover { background: var(--primary-deep); transform: translateY(-1px); }
   .header-call-text { display: flex; flex-direction: column; line-height: 1.15; }
-  .header-call-text strong { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #fff; letter-spacing: -0.01em; }
+  .header-call-text strong { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #fff; letter-spacing: -0.01em; white-space: nowrap; }
   .header-call-text small { font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase; opacity: 0.85; }
 
   .open-dot {
@@ -505,8 +505,9 @@ const baseSchema = {
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
-    .header-call { padding: 0.45rem 0.9rem; }
+    .header-call { padding: 0.45rem 0.85rem; }
     .header-call-text small { display: none; }
+    .header-call-text strong { font-size: 0.88rem; }
     .call-bar { display: flex; }
     section { padding: 3.6rem 0; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
