@@ -33,7 +33,7 @@ const posts = (await getCollection('blog')).sort(
 
 <style>
   .lede { max-width: 58ch; margin-top: 1rem; font-size: 1.1rem; }
-  .post-list { margin-top: 2.5rem; display: grid; gap: 1rem; max-width: 780px; }
+  .post-list { margin-top: 2.5rem; display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
   .post-card {
     border: 1px solid var(--line); border-radius: 16px; background: #ffffff;
     padding: 1.8rem; text-decoration: none; display: block;
