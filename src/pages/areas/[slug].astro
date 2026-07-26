@@ -34,8 +34,8 @@ const breadcrumb = {
 };
 ---
 <Base
-  title={`209 Restoration | Water Damage ${city.name}, CA | 24/7`}
-  description={`Emergency water damage, flood, and sewage cleanup in ${city.name}. ${city.short} Open now, call ${SITE.phoneDigits}.`}
+  title={`Water Damage Restoration ${city.name}, CA | 24 Hour Cleanup Company`}
+  description={`24 hour water damage restoration and cleanup company in ${city.name}, CA. Emergency water removal, flood damage restoration, water damage repair, and mold removal by local ${city.county} crews. Open now, call ${SITE.phoneDigits}.`}
   schema={[areaSchema, breadcrumb]}
 >
   <section class="area-hero">
@@ -46,6 +46,11 @@ const breadcrumb = {
       <span class="eyebrow">{city.county}</span>
       <h1>{city.h1}</h1>
       <p class="mono open-line"><span class="open-dot" aria-hidden="true"></span> OPEN NOW &middot; LOCAL CREWS &middot; 24/7</p>
+      <p class="body-p">
+        Looking for a water damage restoration company in {city.name}? This is a 24 hour dispatch line for
+        {' '}{city.name} and the rest of {city.county}. One call reaches a live dispatcher who sends a licensed
+        local crew for emergency water removal, flood damage cleanup, water damage repair, and mold removal.
+      </p>
       {city.intro.map((p) => <p class="body-p">{p}</p>)}
       <div class="area-actions">
         <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>

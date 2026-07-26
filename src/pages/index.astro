@@ -13,7 +13,11 @@ const faq = [
   { q: 'What should I do while I wait?', a: 'If it is safe: shut off the water at the main, kill power to affected rooms at the breaker, move what you can to dry ground, and do not run the HVAC. The dispatcher can walk you through it on the phone.' },
   { q: 'Will my insurance cover this?', a: 'Sudden losses like burst pipes and appliance failures are commonly covered; rising outside flood water usually requires separate flood insurance. Crews document everything from the first visit so whatever coverage you have actually pays.' },
   { q: 'Do you charge to come out?', a: 'Calling costs nothing and the dispatcher will give you straight answers about the situation. For covered losses, many crews bill your insurer directly so you are only out your deductible.' },
-  { q: 'Is it really an emergency if the water already stopped?', a: 'Yes. The water you can see is not the problem; the water inside walls, pad, and subfloor is. Mold starts in about 48 hours, so the drying clock is running whether or not the leak is.' }
+  { q: 'Is it really an emergency if the water already stopped?', a: 'Yes. The water you can see is not the problem; the water inside walls, pad, and subfloor is. Mold starts in about 48 hours, so the drying clock is running whether or not the leak is.' },
+  { q: 'Are you a 24 hour water damage restoration company?', a: 'Yes. This is a 24 hour dispatch line, and the water restoration companies it connects you with run nights, weekends, and holidays. Water damage does not keep business hours and neither does the phone.' },
+  { q: 'Is there a water damage restoration company near me?', a: 'Almost certainly. Crews are local to San Joaquin and Stanislaus Counties, covering Stockton, Modesto, Lodi, Tracy, Manteca, Turlock, Lathrop, and Ceres, so the nearest available crew is dispatched to you rather than driving in from out of the area.' },
+  { q: 'Do you handle water damage repair, or only cleanup?', a: 'Both sides of the job. The emergency phase is water damage cleanup: extraction, drying, and removing what cannot be saved. After that comes repair and rebuild, putting drywall, flooring, and paint back so the property is whole again.' },
+  { q: 'Do crews handle mold removal too?', a: 'Yes. Mold removal and remediation are common follow-ons to any water loss, because mold starts in roughly 48 hours. If the crew finds growth during drying, containment and removal are handled as part of the same job.' }
 ];
 
 const faqSchema = {
@@ -27,16 +31,16 @@ const faqSchema = {
 };
 ---
 <Base
-  title="209 Restoration | Water Damage Restoration Stockton & Modesto | 24/7"
-  description="Emergency water damage restoration across the 209: Stockton, Modesto, Lodi, Tracy, Manteca. Flood, sewage, and burst pipe cleanup. Open now, crews answer 24/7. Call (209) 980-2782."
+  title="Water Damage Restoration Company | 24 Hour Cleanup | Stockton & Modesto"
+  description="24 hour water damage restoration and cleanup company serving Stockton, Modesto, Lodi, Manteca, Tracy and the 209. Emergency water removal, flood damage cleanup, water damage repair, and mold removal. Local crews answer now, call (209) 980-2782."
   schema={[faqSchema]}
 >
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow"><span class="open-dot" aria-hidden="true"></span>&nbsp; Open now &middot; 24/7 &middot; San Joaquin + Stanislaus</p>
-        <h1>Water in your house.<br /><span class="accent">Crews in the 209.</span></h1>
-        <p class="hero-sub">Burst pipe, flooded floor, sewage backup, storm leak. One call reaches a live dispatcher who sends a licensed local restoration crew, any hour, any night, anywhere from Stockton to Turlock.</p>
+        <h1>Water damage restoration.<br /><span class="accent">Crews in the 209.</span></h1>
+        <p class="hero-sub">Water in your house? Burst pipe, flooded floor, sewage backup, storm leak. One call reaches a live dispatcher who sends a licensed local water damage cleanup company, any hour, any night, anywhere from Stockton to Turlock.</p>
         <div class="hero-actions">
           <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
           <a class="btn-ghost" href="/services/">See services</a>

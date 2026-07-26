@@ -125,12 +125,12 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'mold-remediation',
-    name: 'Mold Remediation',
-    short: 'Containment, HEPA filtration, removal, and treatment when water damage was found too late.',
+    name: 'Mold Removal & Remediation',
+    short: 'Mold removal with containment, HEPA filtration, and treatment when water damage was found too late.',
     icon: 'mold',
-    h1: 'Mold Remediation in the 209',
+    h1: 'Mold Removal and Remediation in the 209',
     intro: [
-      'Mold needs about 48 hours of moisture to get started, which is why it shows up after slow leaks, old flood damage, and drying jobs that never really finished. Musty smell, dark spotting on drywall, or allergy symptoms that clear up when you leave the house are the usual tells.',
+      'Mold needs about 48 hours of moisture to get started, which is why it shows up after slow leaks, old flood damage, and drying jobs that never really finished. Musty smell, dark spotting on drywall, or allergy symptoms that clear up when you leave the house are the usual tells. Black mold removal is the request that comes in most often, and it starts with finding the water that fed it.',
       'Proper remediation is not spraying bleach on a wall. Crews build containment with negative air pressure so spores do not spread, remove affected materials under HEPA filtration, treat the structure, and fix the moisture source, because mold always comes back if the water problem stays.'
     ],
     bullets: [
@@ -275,6 +275,50 @@ export const SERVICES: Service[] = [
       { q: 'Should I call insurance or the restoration crew first?', a: 'Stop the water, then call here. Mitigation cannot wait for an adjuster, and policies actually require you to prevent further damage. Then report the claim; crews will coordinate with the adjuster from there.' },
       { q: 'Will filing a claim raise my rates?', a: 'Possibly, and that is a real consideration for small losses close to your deductible. Crews can give you a scope first so you can decide whether to file with real numbers in hand.' },
       { q: 'The adjuster offered less than the damage costs. Now what?', a: 'A documented scope with moisture logs and photos is your negotiating position. Supplements are a normal part of the process when the initial estimate missed damage.' }
+    ]
+  },
+  {
+    slug: 'emergency-board-up',
+    name: '24 Hour Board Up',
+    short: 'Emergency board up and tarping to secure a building after fire, storm, or break-in damage, day or night.',
+    icon: 'boardup',
+    h1: '24 Hour Emergency Board Up Service',
+    intro: [
+      'An opening in your building is a clock running against you. A roof torn back by Valley wind, a window lost to a storm or a break-in, a wall opened up by fire crews doing their job: until it is closed, weather and anyone walking past have an invitation. Insurance policies also expect you to secure the property, and a delay there can complicate the claim.',
+      'Dispatch runs 24 hours a day, and board up is the kind of call that does not wait for morning. Crews arrive with plywood, fasteners, and shrink wrap or tarp, close the openings, and document the damage with photos before anything is covered so the claim still shows what happened.'
+    ],
+    bullets: [
+      { title: 'Openings closed the same night', body: 'Windows, doors, and torn-open walls boarded so weather, animals, and trespassers stay outside.' },
+      { title: 'Roof tarping', body: 'Storm-damaged and fire-damaged roofs covered before the next system rolls through the Valley.' },
+      { title: 'Photographed before covering', body: 'Damage documented first, so boarding up does not hide what your adjuster needs to see.' },
+      { title: 'Secured against liability', body: 'An open building is an attractive nuisance. Closing it protects you from more than weather.' }
+    ],
+    faq: [
+      { q: 'How fast can a crew board up my property?', a: 'Board up is treated as an emergency call. Dispatch answers 24/7 and crews are local to San Joaquin and Stanislaus Counties, so response across Stockton, Turlock, Manteca, Tracy, and Lodi is typically a matter of hours, including nights and weekends.' },
+      { q: 'Does insurance pay for emergency board up?', a: 'Usually yes. Most policies require you to take reasonable steps to prevent further damage, and emergency board up is a textbook example. Keep the documentation and invoice for the claim.' },
+      { q: 'Can you board up after a fire?', a: 'Yes, and it is common. Fire crews open roofs and walls to reach hot spots, which leaves a building wide open. Board up, tarping, and the smoke and soot work can be handled by the same dispatched crew.' }
+    ]
+  },
+  {
+    slug: 'contents-restoration',
+    name: 'Contents Restoration',
+    short: 'Cleaning, drying, and salvaging the belongings inside the loss, not just the building around them.',
+    icon: 'contents',
+    h1: 'Contents Restoration and Pack Out',
+    intro: [
+      'Structure gets the attention, but what people actually grieve is the contents: furniture, photographs, documents, clothing, tools, the things that make a house yours. A lot of it is salvageable if it is handled in the first days rather than left sitting wet in a closed-up room.',
+      'Crews dispatched through this line inventory affected contents, decide honestly what can be restored and what cannot, and either treat items on site or pack them out for cleaning and storage while the structure dries and rebuilds. Everything is logged, because a contents claim is settled from that inventory.'
+    ],
+    bullets: [
+      { title: 'Inventoried, not guessed', body: 'A documented list of affected items with photos, which is exactly what a contents claim is paid from.' },
+      { title: 'Pack out and storage', body: 'Belongings moved off site so they are out of the wet zone while drying and repairs happen.' },
+      { title: 'Document and photo recovery', body: 'Wet paper and photographs handled quickly, when the window to save them is still open.' },
+      { title: 'Straight answers on salvage', body: 'If something is not worth restoring, you hear that early so it goes on the claim instead of into storage.' }
+    ],
+    faq: [
+      { q: 'Can wet photos and documents really be saved?', a: 'Often, if they are dealt with fast. Paper and photographs degrade and stick together within days, and mold follows moisture, so this is one of the most time-sensitive parts of any loss.' },
+      { q: 'Does my policy cover contents?', a: 'Most homeowners policies cover personal property under a separate limit from the structure. That is why the inventory matters: the contents portion of your claim is paid from documentation, not from memory.' },
+      { q: 'What happens to my belongings during a pack out?', a: 'Items are inventoried, moved to storage, cleaned where appropriate, and returned when the structure is ready. You get the inventory list, so nothing depends on trust alone.' }
     ]
   }
 ];

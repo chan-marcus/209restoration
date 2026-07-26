@@ -1,0 +1,256 @@
+---
+// Service x city landing pages: /services/[service]/[city]/
+//
+// Deliberately NOT a full service x city matrix. Search Console shows only
+// one service+city cluster ranking in reach (position <= 25) with no page
+// behind it: 24 hour board up in Turlock and Manteca
+// ("turlock 24 hour board up service" pos 15.6, "turlock 24 hour board up"
+// pos 16.7, "manteca ca 24 hour board up service" pos 18.3).
+// Every other city-qualified query is either served by the existing
+// /areas/[city]/ page or sits far outside striking distance, so generating
+// the rest would be thin pages with no demand behind them.
+// Add combinations here only when query data justifies them.
+import Base from '../../../layouts/Base.astro';
+import ServiceIcon from '../../../components/ServiceIcon.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+import { SITE } from '../../../config/site';
+import { SERVICES } from '../../../data/services';
+import { CITIES } from '../../../data/cities';
+
+export function getStaticPaths() {
+  // Declared inside getStaticPaths: Astro hoists this function, so it cannot
+  // reference consts from the component scope.
+  const TARGETS = [
+    { service: 'emergency-board-up', city: 'turlock' },
+    { service: 'emergency-board-up', city: 'manteca' }
+  ];
+  return TARGETS.flatMap((t) => {
+    const service = SERVICES.find((s) => s.slug === t.service);
+    const city = CITIES.find((c) => c.slug === t.city);
+    if (!service || !city) return [];
+    return [{ params: { slug: service.slug, city: city.slug }, props: { service, city } }];
+  });
+}
+
+const { service, city } = Astro.props;
+
+const url = `${SITE.domain}/services/${service.slug}/${city.slug}/`;
+const nearbyCities = CITIES.filter((c) => c.slug !== city.slug).slice(0, 5);
+const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 4);
+
+// Local FAQ answers built from this city's own geography and housing stock,
+// so every combination says something specific rather than boilerplate.
+const localFaq = [
+  {
+    q: `How fast can a crew reach me in ${city.name}?`,
+    a: `Dispatch answers 24 hours a day and crews are local to ${city.county}, so ${city.name} response is typically a matter of hours, not next-day. Calling costs nothing and the dispatcher can walk you through what to do while the crew is en route.`
+  },
+  {
+    q: `Do you cover my part of ${city.name}?`,
+    a: `Yes. Crews respond across ${city.neighborhoods.slice(0, 5).join(', ')}, and the rest of ${city.name}, plus the surrounding ${city.county} communities.`
+  },
+  {
+    q: `What makes ${city.name} properties prone to this?`,
+    a: `${city.localRisks[0].body} That is a large share of the ${service.name.toLowerCase()} calls dispatched in ${city.name}.`
+  }
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${service.name} in ${city.name}, CA`,
+  serviceType: service.name,
+  provider: { '@id': SITE.domain + '/#business' },
+  areaServed: {
+    '@type': 'City',
+    name: city.name,
+    containedInPlace: { '@type': 'AdministrativeArea', name: city.county }
+  },
+  url,
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    servicePhone: { '@type': 'ContactPoint', telephone: SITE.phone, contactType: 'emergency dispatch' }
+  }
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [...localFaq, ...service.faq].map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.domain + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: SITE.domain + '/services/' },
+    { '@type': 'ListItem', position: 3, name: service.name, item: `${SITE.domain}/services/${service.slug}/` },
+    { '@type': 'ListItem', position: 4, name: city.name, item: url }
+  ]
+};
+---
+<Base
+  title={`${service.name} ${city.name}, CA | Emergency Service | 209 Restoration`}
+  description={`${service.name} in ${city.name}, CA. ${service.short} Local ${city.county} crews, open 24/7. Call ${SITE.phoneDigits}.`}
+  schema={[serviceSchema, faqSchema, breadcrumb]}
+>
+  <section class="svc-hero">
+    <div class="wrap">
+      <nav class="crumbs mono" aria-label="Breadcrumb">
+        <a href="/">HOME</a> / <a href="/services/">SERVICES</a> /
+        <a href={`/services/${service.slug}/`}>{service.name.toUpperCase()}</a> /
+        <span>{city.name.toUpperCase()}</span>
+      </nav>
+      <div class="svc-head">
+        <div class="svc-icon"><ServiceIcon icon={service.icon} /></div>
+        <div>
+          <h1>{service.name} in {city.name}, CA</h1>
+          <p class="mono open-line"><span class="open-dot" aria-hidden="true"></span> OPEN NOW &middot; LOCAL {city.county.toUpperCase()} CREWS &middot; 24/7</p>
+        </div>
+      </div>
+
+      <p class="body-p">
+        {service.name} for {city.name} homes and businesses, dispatched around the clock.
+        {' '}{service.short} Crews are local to {city.county}, so the drive is short and the response is measured in hours.
+      </p>
+      {service.intro.map((p) => <p class="body-p">{p}</p>)}
+
+      <div class="svc-actions">
+        <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        <a class="btn-ghost" href={`/areas/${city.slug}/`}>All services in {city.name}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-deep">
+    <div class="wrap">
+      <h2>Why {city.name} properties need this</h2>
+      <p class="body-p">{city.intro[0]}</p>
+      <div class="bullet-grid">
+        {city.localRisks.map((r) => (
+          <div class="bullet">
+            <h3>{r.title}</h3>
+            <p>{r.body}</p>
+          </div>
+        ))}
+      </div>
+      <p class="hoods mono">CREWS RESPOND ACROSS: {city.neighborhoods.join(' · ').toUpperCase()}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What the crew handles</h2>
+      <div class="bullet-grid">
+        {service.bullets.map((b) => (
+          <div class="bullet">
+            <h3>{b.title}</h3>
+            <p>{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading={`Need ${service.name.toLowerCase()} in ${city.name}?`}
+    sub={`Crews local to ${city.county} answer around the clock. Calling costs nothing.`}
+  />
+
+  <section>
+    <div class="wrap">
+      <h2>{city.name} questions</h2>
+      <div class="faq-list">
+        {[...localFaq, ...service.faq].map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-deep">
+    <div class="wrap">
+      <span class="eyebrow">Also in {city.name}</span>
+      <h2>Related services</h2>
+      <div class="card-grid">
+        {otherServices.map((s) => (
+          <a class="card" href={`/services/${s.slug}/`}>
+            <ServiceIcon icon={s.icon} />
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="card-cta">DETAILS &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Nearby</span>
+      <h2>Also serving</h2>
+      <div class="nearby">
+        {nearbyCities.map((c) => (
+          <a href={`/areas/${c.slug}/`}>{c.name}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .svc-hero { padding-top: 2.5rem; }
+  .crumbs { font-size: 0.68rem; color: var(--silt); margin-bottom: 1.8rem; }
+  .crumbs a { color: var(--silt); text-decoration: none; }
+  .crumbs a:hover { color: var(--cyan); }
+  .crumbs span { color: var(--cyan); }
+  .svc-head { display: flex; gap: 1.4rem; align-items: flex-start; margin-bottom: 1.5rem; }
+  .svc-icon {
+    flex-shrink: 0; width: 76px; height: 76px; border-radius: 16px;
+    background: var(--tint); border: 1px solid rgba(13, 148, 168, 0.25);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .svc-icon :global(svg) { width: 46px; height: 46px; }
+  .open-line { margin-top: 0.8rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; }
+  .body-p { max-width: 68ch; margin-top: 1.1rem; }
+  .svc-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.8rem; }
+
+  .bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .bullet { border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem; background: var(--panel); }
+  .bullet p { margin-top: 0.4rem; font-size: 0.95rem; }
+  .hoods { margin-top: 2rem; font-size: 0.68rem; line-height: 2; color: var(--silt); }
+
+  .faq-list { margin-top: 2rem; max-width: 780px; }
+  details {
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 1rem 1.2rem; margin-bottom: 0.7rem; background: var(--deep);
+  }
+  summary {
+    cursor: pointer; font-weight: 700; color: var(--paper); list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  summary::after { content: '+'; color: var(--cyan); font-family: var(--font-display); font-size: 1.3rem; }
+  details[open] summary::after { content: '\2212'; }
+  details p { margin-top: 0.8rem; font-size: 0.97rem; }
+
+  .nearby { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+  .nearby a {
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.45rem 1.1rem; text-decoration: none; color: var(--paper);
+    font-weight: 600; font-size: 0.92rem;
+  }
+  .nearby a:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  @media (max-width: 700px) {
+    .bullet-grid { grid-template-columns: 1fr; }
+    .svc-head { flex-direction: column; }
+  }
+</style>
