@@ -252,7 +252,12 @@ const websiteSchema = {
     font-family: var(--font-display);
     font-weight: 800;
     line-height: 1.06;
+    /* Tight tracking is intentional, but letter-spacing also shrinks the
+       gap between words. word-spacing puts that gap back so headings do
+       not read as one run-on word. Inherited, so scoped heading styles
+       that re-declare letter-spacing get the correction too. */
     letter-spacing: -0.033em;
+    word-spacing: 0.08em;
     color: var(--paper);
     text-wrap: balance;
   }
@@ -260,7 +265,7 @@ const websiteSchema = {
   h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
   h3 {
     font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
-    letter-spacing: -0.015em; color: var(--paper); line-height: 1.35;
+    letter-spacing: -0.015em; word-spacing: 0.04em; color: var(--paper); line-height: 1.35;
   }
 
   p { color: var(--silt); }
