@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="mgtTitle mgtDesc" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="mgtTitle">How fast mold grows after water damage</title>
+  <desc id="mgtDesc">A four stage timeline. Zero to twenty four hours: materials absorb water and no mold has started, the best window to dry. Twenty four to forty eight hours: spores activate on wet drywall and pad. Forty eight to seventy two hours: visible growth and a musty smell appear. One week and beyond: colonies are established and professional mold removal with containment is required.</desc>
+  <rect width="760" height="330" rx="16" fill="#ffffff"/>
+  <rect width="760" height="330" rx="16" fill="none" stroke="#e4ebee"/>
+
+  <text x="40" y="46" font-size="15" font-weight="700" fill="#0e2433">Mold growth after a water loss</text>
+  <text x="40" y="68" font-size="12" fill="#54707c">Assumes wet material left at room temperature. Valley summer heat moves this faster.</text>
+
+  <!-- timeline bar -->
+  <g>
+    <path d="M40 108 h160 v46 h-160 a8 8 0 0 1 -8 -8 v-30 a8 8 0 0 1 8 -8 Z" fill="#31aebf"/>
+    <rect x="200" y="108" width="170" height="46" fill="#b8964a"/>
+    <rect x="370" y="108" width="170" height="46" fill="#7f8f4e"/>
+    <path d="M540 108 h172 a8 8 0 0 1 8 8 v30 a8 8 0 0 1 -8 8 h-172 Z" fill="#4a5f3a"/>
+    <text x="120" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">0&#8211;24 hours</text>
+    <text x="285" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">24&#8211;48 hours</text>
+    <text x="455" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">48&#8211;72 hours</text>
+    <text x="626" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1 week +</text>
+  </g>
+
+  <!-- stage detail -->
+  <g font-size="12" fill="#54707c">
+    <text x="120" y="184" text-anchor="middle" font-weight="700" fill="#0e2433">No mold yet</text>
+    <text x="120" y="204" text-anchor="middle">Drywall, pad, and</text>
+    <text x="120" y="221" text-anchor="middle">subfloor absorb water</text>
+
+    <text x="285" y="184" text-anchor="middle" font-weight="700" fill="#0e2433">Spores activate</text>
+    <text x="285" y="204" text-anchor="middle">Growth starts inside</text>
+    <text x="285" y="221" text-anchor="middle">walls before you see it</text>
+
+    <text x="455" y="184" text-anchor="middle" font-weight="700" fill="#0e2433">Visible + musty</text>
+    <text x="455" y="204" text-anchor="middle">Spotting on drywall,</text>
+    <text x="455" y="221" text-anchor="middle">that basement smell</text>
+
+    <text x="626" y="184" text-anchor="middle" font-weight="700" fill="#0e2433">Colonies established</text>
+    <text x="626" y="204" text-anchor="middle">Containment and</text>
+    <text x="626" y="221" text-anchor="middle">removal required</text>
+  </g>
+
+  <!-- the window -->
+  <g>
+    <path d="M40 258 v-10 h330 v10" fill="none" stroke="#0a7486" stroke-width="2"/>
+    <rect x="126" y="264" width="158" height="30" rx="15" fill="#f2fafb" stroke="#cdeef2"/>
+    <text x="205" y="284" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0a7486">Your window to dry it</text>
+    <text x="626" y="284" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8c4437">Now it is a remediation job</text>
+  </g>
+</svg>

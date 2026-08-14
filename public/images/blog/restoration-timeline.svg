@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="rtTitle rtDesc" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="rtTitle">How long water damage restoration takes, phase by phase</title>
+  <desc id="rtDesc">Timeline of a typical water damage job. Hours one to four: emergency extraction and stopping the source. Day one: demolition of unsalvageable material and drying equipment set. Days two to four: structural drying with daily moisture readings. Day three to five: dry standard verified and equipment removed. Week two onward: repairs and rebuild. Mitigation totals roughly three to five days; rebuild varies from one to six weeks.</desc>
+  <rect width="760" height="340" rx="16" fill="#ffffff"/>
+  <rect width="760" height="340" rx="16" fill="none" stroke="#e4ebee"/>
+
+  <text x="40" y="44" font-size="15" font-weight="700" fill="#0e2433">A typical water damage job, start to finish</text>
+  <text x="40" y="66" font-size="12" fill="#54707c">Block width shows relative duration. Clean-water losses dry faster than sewage or hardwood.</text>
+
+  <!-- phase bar -->
+  <g>
+    <path d="M40 100 h110 v50 h-110 a8 8 0 0 1 -8 -8 v-34 a8 8 0 0 1 8 -8 Z" fill="#0a7486"/>
+    <rect x="150" y="100" width="120" height="50" fill="#31aebf"/>
+    <rect x="270" y="100" width="200" height="50" fill="#63c2cf"/>
+    <rect x="470" y="100" width="80" height="50" fill="#8ed3dc"/>
+    <path d="M550 100 h162 a8 8 0 0 1 8 8 v34 a8 8 0 0 1 -8 8 h-162 Z" fill="#e6ddcd"/>
+
+    <text x="95" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Hours 1&#8211;4</text>
+    <text x="210" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Day 1</text>
+    <text x="370" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#08333c">Days 2&#8211;4</text>
+    <text x="510" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#08333c">Day 3&#8211;5</text>
+    <text x="631" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5c4f3a">Week 2 +</text>
+  </g>
+
+  <!-- phase detail -->
+  <g font-size="11.5" fill="#54707c">
+    <text x="95" y="178" text-anchor="middle" font-weight="700" font-size="12" fill="#0e2433">Extraction</text>
+    <text x="95" y="197" text-anchor="middle">Stop source,</text>
+    <text x="95" y="213" text-anchor="middle">pull standing water</text>
+
+    <text x="210" y="178" text-anchor="middle" font-weight="700" font-size="12" fill="#0e2433">Demo + set</text>
+    <text x="210" y="197" text-anchor="middle">Flood cuts, pad out,</text>
+    <text x="210" y="213" text-anchor="middle">equipment placed</text>
+
+    <text x="370" y="178" text-anchor="middle" font-weight="700" font-size="12" fill="#0e2433">Structural drying</text>
+    <text x="370" y="197" text-anchor="middle">Air movers + dehumidifiers</text>
+    <text x="370" y="213" text-anchor="middle">run 24/7, readings logged daily</text>
+
+    <text x="510" y="178" text-anchor="middle" font-weight="700" font-size="12" fill="#0e2433">Verified dry</text>
+    <text x="510" y="197" text-anchor="middle">Meters hit</text>
+    <text x="510" y="213" text-anchor="middle">dry standard</text>
+
+    <text x="631" y="178" text-anchor="middle" font-weight="700" font-size="12" fill="#0e2433">Repairs</text>
+    <text x="631" y="197" text-anchor="middle">Drywall, flooring, paint.</text>
+    <text x="631" y="213" text-anchor="middle">Scheduled, not emergency</text>
+  </g>
+
+  <!-- brackets -->
+  <g>
+    <path d="M40 258 v-12 h510 v12" fill="none" stroke="#0a7486" stroke-width="2"/>
+    <rect x="196" y="264" width="200" height="32" rx="16" fill="#f2fafb" stroke="#cdeef2"/>
+    <text x="296" y="285" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0a7486">Mitigation: 3&#8211;5 days</text>
+
+    <path d="M550 258 v-12 h170 v12" fill="none" stroke="#b0a68f" stroke-width="2"/>
+    <rect x="551" y="264" width="168" height="32" rx="16" fill="#faf8f4" stroke="#e6ddcd"/>
+    <text x="635" y="285" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a6a4f">Rebuild: 1&#8211;6 weeks</text>
+  </g>
+
+  <text x="40" y="322" font-size="11" fill="#8b9aa2">Sewage losses, hardwood, and plaster add days. Mold found mid-job adds containment time.</text>
+</svg>
