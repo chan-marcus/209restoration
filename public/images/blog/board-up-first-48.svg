@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" aria-labelledby="buT buD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="buT">The first 48 hours after storm damage opens a building</title>
+  <desc id="buD">Four stages. Hours zero to two: photograph the damage before anything is covered. Hours two to six: board up and tarp so weather and trespassers stay out. Hours six to twenty four: extract water and start drying inside. Day two onward: scope and repair, once the building is secure and dry.</desc>
+  <rect width="760" height="320" rx="16" fill="#ffffff"/><rect width="760" height="320" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">First 48 hours after the building is opened</text>
+  <text x="30" y="63" font-size="12" fill="#54707c">Order matters: document before you cover, secure before you dry.</text>
+
+  <g>
+    <path d="M30 96 h158 v52 h-158 a8 8 0 0 1 -8 -8 v-36 a8 8 0 0 1 8 -8 Z" fill="#0a7486"/>
+    <rect x="188" y="96" width="168" height="52" fill="#1c93a6"/>
+    <rect x="356" y="96" width="188" height="52" fill="#57bccb"/>
+    <path d="M544 96 h178 a8 8 0 0 1 8 8 v36 a8 8 0 0 1 -8 8 h-178 Z" fill="#dfe8ea"/>
+    <g text-anchor="middle" font-size="12.5" font-weight="700">
+      <text x="109" y="127" fill="#ffffff">Hours 0&#8211;2</text>
+      <text x="272" y="127" fill="#ffffff">Hours 2&#8211;6</text>
+      <text x="450" y="127" fill="#08333c">Hours 6&#8211;24</text>
+      <text x="633" y="127" fill="#4a5b60">Day 2 +</text>
+    </g>
+  </g>
+
+  <g text-anchor="middle">
+    <g font-weight="700" font-size="12.5" fill="#0e2433">
+      <text x="109" y="182">Photograph</text><text x="272" y="182">Board up + tarp</text>
+      <text x="450" y="182">Extract + dry</text><text x="633" y="182">Scope + repair</text>
+    </g>
+    <g font-size="11.5" fill="#54707c">
+      <text x="109" y="204">Every opening,</text><text x="109" y="221">before covering</text>
+      <text x="272" y="204">Weather, animals,</text><text x="272" y="221">and trespassers out</text>
+      <text x="450" y="204">Water already inside</text><text x="450" y="221">keeps soaking</text>
+      <text x="633" y="204">Scheduled work,</text><text x="633" y="221">not emergency</text>
+    </g>
+  </g>
+
+  <g>
+    <path d="M30 262 v-12 h514 v12" fill="none" stroke="#0a7486" stroke-width="2"/>
+    <rect x="188" y="268" width="198" height="30" rx="15" fill="#f2fafb" stroke="#cdeef2"/>
+    <text x="287" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0a7486">Emergency phase, insured</text>
+  </g>
+  <text x="633" y="288" text-anchor="middle" font-size="12" fill="#93a3ab">Waits on the adjuster</text>
+</svg>

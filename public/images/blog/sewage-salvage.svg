@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="ssT ssD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="ssT">What is removed and what is saved after a sewage backup</title>
+  <desc id="ssD">Two columns. Removed because it is porous and cannot be disinfected: carpet and pad, drywall to twelve inches above the waterline, insulation, particleboard cabinets, mattresses and upholstery. Saved after cleaning and disinfection: tile and sealed concrete, solid wood and metal framing, glass and hard plastics, sealed hardwood if caught fast, dishes and metal cookware.</desc>
+  <rect width="760" height="340" rx="16" fill="#ffffff"/><rect width="760" height="340" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">Category 3 water: the salvage line</text>
+  <text x="30" y="63" font-size="12" fill="#54707c">Porosity decides it. If it soaked in and cannot be disinfected all the way through, it goes.</text>
+
+  <g>
+    <rect x="30" y="84" width="340" height="228" rx="14" fill="#f8f2f1" stroke="#e8d3cf"/>
+    <circle cx="58" cy="114" r="13" fill="#8c4437"/>
+    <path d="M52 108 l12 12 M64 108 l-12 12" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="82" y="112" font-size="14" font-weight="700" fill="#8c4437">Comes out</text>
+    <text x="82" y="130" font-size="11.5" fill="#54707c">Porous. Cannot be disinfected through.</text>
+    <g font-size="12.5" fill="#0e2433">
+      <text x="56" y="166">Carpet and pad</text>
+      <text x="56" y="194">Drywall, 12&#8243; above the waterline</text>
+      <text x="56" y="222">Insulation behind it</text>
+      <text x="56" y="250">Particleboard cabinet boxes</text>
+      <text x="56" y="278">Mattresses, upholstery</text>
+    </g>
+    <g fill="#8c4437">
+      <circle cx="44" cy="162" r="3"/><circle cx="44" cy="190" r="3"/><circle cx="44" cy="218" r="3"/>
+      <circle cx="44" cy="246" r="3"/><circle cx="44" cy="274" r="3"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="390" y="84" width="340" height="228" rx="14" fill="#f2fafb" stroke="#cdeef2"/>
+    <circle cx="418" cy="114" r="13" fill="#0a7486"/>
+    <path d="M412 114 l4 5 l8 -9" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="442" y="112" font-size="14" font-weight="700" fill="#0a7486">Stays, after cleaning</text>
+    <text x="442" y="130" font-size="11.5" fill="#54707c">Non-porous. Disinfects on the surface.</text>
+    <g font-size="12.5" fill="#0e2433">
+      <text x="416" y="166">Tile and sealed concrete</text>
+      <text x="416" y="194">Solid wood and metal framing</text>
+      <text x="416" y="222">Glass and hard plastics</text>
+      <text x="416" y="250">Sealed hardwood, if caught fast</text>
+      <text x="416" y="278">Dishes and metal cookware</text>
+    </g>
+    <g fill="#31aebf">
+      <circle cx="404" cy="162" r="3"/><circle cx="404" cy="190" r="3"/><circle cx="404" cy="218" r="3"/>
+      <circle cx="404" cy="246" r="3"/><circle cx="404" cy="274" r="3"/>
+    </g>
+  </g>
+</svg>
