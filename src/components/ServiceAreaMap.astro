@@ -35,6 +35,11 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
       const el = document.getElementById('service-area-map');
       if (!el) return;
       const map = new google.maps.Map(el, {
+        // A map built without center+zoom never renders, even when fitBounds()
+        // is later called with valid bounds — verified against a live control
+        // map. fitBounds below still refines this to the shaded counties.
+        center: { lat: 37.78, lng: -121.15 },
+        zoom: 9,
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: true,

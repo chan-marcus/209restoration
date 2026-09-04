@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ServiceIcon from '../../components/ServiceIcon.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
 import { SITE } from '../../config/site';
 import { CITIES } from '../../data/cities';
 import { SERVICES } from '../../data/services';
@@ -71,6 +72,14 @@ const breadcrumb = {
         ))}
       </div>
       <p class="hoods mono">CREWS RESPOND ACROSS: {city.neighborhoods.join(' \u00b7 ').toUpperCase()}</p>
+      <div class="area-map">
+        <MapEmbed
+          query={`${city.name}, ${SITE.anchorState}`}
+          zoom={12}
+          title={`Map of ${city.name}, California, in the ${SITE.brand} service area`}
+          caption={`${city.name} \u00b7 ${city.county}`}
+        />
+      </div>
     </div>
   </section>
 
@@ -118,6 +127,7 @@ const breadcrumb = {
   .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
   .risk { border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem; background: var(--panel); }
   .risk p { margin-top: 0.4rem; font-size: 0.95rem; }
+  .area-map { margin-top: 2rem; max-width: 780px; }
   .hoods { margin-top: 2rem; font-size: 0.68rem; line-height: 2; color: var(--silt); }
 
   .all-link { margin-top: 1.6rem; }
