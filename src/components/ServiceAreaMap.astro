@@ -17,6 +17,7 @@ interface Props {
 const { title, caption } = Astro.props;
 const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
 const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, lng: c.lng }));
+const fallbackQuery = `${SITE.anchorCity}, ${SITE.anchorState}`;
 ---
 {apiKey ? (
   <figure class="map-embed">
@@ -26,7 +27,7 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
     {caption && <figcaption class="mono">{caption}</figcaption>}
   </figure>
 
-  <script define:vars={{ apiKey, areas, geojson: serviceAreaGeoJson }}>
+  <script define:vars={{ apiKey, areas, geojson: serviceAreaGeoJson, fallbackQuery, mapTitle: title }}>
     // Brand colors pulled to match the site's cyan accent.
     const FILL = '#3ec6d8';
     const STROKE = '#0d94a8';
@@ -99,6 +100,30 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
       });
 
       map.fitBounds(bounds, 24);
+      ensureVisible(el);
+    }
+
+    // Safety net. The JS Maps renderer does not boot in every environment —
+    // when it fails it leaves an empty container and logs nothing, so there is
+    // no error to branch on. If nothing has painted shortly after init, swap in
+    // the plain Maps embed iframe, which renders anywhere. A simpler map beats
+    // a blank grey box.
+    function ensureVisible(el) {
+      setTimeout(function () {
+        if (el.querySelector('.gm-style') || el.querySelector('img') || el.querySelector('canvas')) return;
+        const q = encodeURIComponent(fallbackQuery);
+        const src = apiKey
+          ? 'https://www.google.com/maps/embed/v1/place?key=' + encodeURIComponent(apiKey) + '&q=' + q + '&zoom=9'
+          : 'https://maps.google.com/maps?q=' + q + '&z=9&output=embed';
+        const f = document.createElement('iframe');
+        f.src = src;
+        f.title = mapTitle;
+        f.loading = 'lazy';
+        f.referrerPolicy = 'no-referrer-when-downgrade';
+        f.setAttribute('allowfullscreen', '');
+        f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;display:block';
+        el.replaceChildren(f);
+      }, 3500);
     }
 
     (function loadMaps() {
