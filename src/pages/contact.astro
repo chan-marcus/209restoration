@@ -71,7 +71,12 @@ import { SITE } from '../config/site';
   .side-card p { margin-top: 0.5rem; font-size: 0.95rem; }
   .map-section { margin-top: 1rem; }
   .map-lede { max-width: 60ch; margin: 1rem 0 2rem; }
-  .map-section :global(.map-frame) { max-width: 960px; }
+  /* Capped at 800px deliberately. Where Google Maps falls back to its
+     static-image renderer (verified in a real Chrome profile), instances
+     wider than ~800px return no image at all and the map renders blank:
+     800px drew fine, 900px and 959px were empty under identical options.
+     800 keeps the map large while staying inside that limit. */
+  .map-section :global(.map-frame) { max-width: 800px; }
   @media (max-width: 800px) {
     .contact-grid { grid-template-columns: 1fr; }
   }
