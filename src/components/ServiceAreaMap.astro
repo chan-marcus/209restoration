@@ -31,9 +31,30 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
     const FILL = '#3ec6d8';
     const STROKE = '#0d94a8';
 
+    // Build the map only once the container actually has a size. Google's
+    // callback fires before layout settles, and a map created against a 0x0
+    // element caches that size and never renders — the container measures
+    // correctly afterwards, but the map stays blank. Re-running init by hand
+    // after layout rendered it fine, which is what pinned this down.
+    function whenSized(el, cb) {
+      if (el.offsetWidth > 0 && el.offsetHeight > 0) return cb();
+      if (typeof ResizeObserver === 'function') {
+        const ro = new ResizeObserver(() => {
+          if (el.offsetWidth > 0 && el.offsetHeight > 0) { ro.disconnect(); cb(); }
+        });
+        ro.observe(el);
+      } else {
+        window.addEventListener('load', cb, { once: true });
+      }
+    }
+
     window.initServiceAreaMap = function () {
       const el = document.getElementById('service-area-map');
       if (!el) return;
+      whenSized(el, function () { buildServiceAreaMap(el); });
+    };
+
+    function buildServiceAreaMap(el) {
       const map = new google.maps.Map(el, {
         // A map built without center+zoom never renders, even when fitBounds()
         // is later called with valid bounds — verified against a live control
@@ -78,7 +99,7 @@ const areas = CITIES.map((c) => ({ name: c.name, county: c.county, lat: c.lat, l
       });
 
       map.fitBounds(bounds, 24);
-    };
+    }
 
     (function loadMaps() {
       if (window.google && window.google.maps) { window.initServiceAreaMap(); return; }
