@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="esgT esgD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="esgT">What usually stays and what usually goes after water extraction</title>
+  <desc id="esgD">Table by water category. Clean water from a supply line: carpet often dried in place, pad usually replaced, drywall dried or flood cut. Gray water from a dishwasher or washer: carpet sometimes saved, pad replaced, drywall usually flood cut. Black water from sewage or outside flooding: carpet, pad, and affected drywall all removed.</desc>
+  <rect width="760" height="330" rx="16" fill="#ffffff"/><rect width="760" height="330" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">The water's source decides what gets saved</text>
+  <text x="30" y="63" font-size="12" fill="#54707c">Typical outcomes when extraction starts inside 24 to 48 hours. Your crew's readings make the final call.</text>
+
+  <g font-size="11.5" font-weight="700" fill="#54707c" text-anchor="middle">
+    <text x="320" y="100">Carpet</text><text x="480" y="100">Pad</text><text x="640" y="100">Drywall</text>
+  </g>
+  <line x1="30" y1="110" x2="730" y2="110" stroke="#e4ebee"/>
+
+  <g font-size="12.5">
+    <text x="30" y="146" font-weight="700" fill="#0e2433">Clean water</text>
+    <text x="30" y="163" font-size="11" fill="#54707c">supply line, burst pipe</text>
+    <rect x="250" y="130" width="140" height="30" rx="15" fill="#0a7486"/><text x="320" y="150" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">often dried</text>
+    <rect x="410" y="130" width="140" height="30" rx="15" fill="#9fd8e0"/><text x="480" y="150" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0e2433">usually replaced</text>
+    <rect x="570" y="130" width="140" height="30" rx="15" fill="#0a7486"/><text x="640" y="150" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">dried or cut</text>
+  </g>
+  <line x1="30" y1="184" x2="730" y2="184" stroke="#eef3f5"/>
+  <g font-size="12.5">
+    <text x="30" y="218" font-weight="700" fill="#0e2433">Gray water</text>
+    <text x="30" y="235" font-size="11" fill="#54707c">washer, dishwasher</text>
+    <rect x="250" y="202" width="140" height="30" rx="15" fill="#9fd8e0"/><text x="320" y="222" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0e2433">sometimes</text>
+    <rect x="410" y="202" width="140" height="30" rx="15" fill="#8c4437"/><text x="480" y="222" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">replaced</text>
+    <rect x="570" y="202" width="140" height="30" rx="15" fill="#9fd8e0"/><text x="640" y="222" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0e2433">usually cut</text>
+  </g>
+  <line x1="30" y1="256" x2="730" y2="256" stroke="#eef3f5"/>
+  <g font-size="12.5">
+    <text x="30" y="290" font-weight="700" fill="#0e2433">Black water</text>
+    <text x="30" y="307" font-size="11" fill="#54707c">sewage, outside flood</text>
+    <rect x="250" y="274" width="140" height="30" rx="15" fill="#8c4437"/><text x="320" y="294" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">removed</text>
+    <rect x="410" y="274" width="140" height="30" rx="15" fill="#8c4437"/><text x="480" y="294" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">removed</text>
+    <rect x="570" y="274" width="140" height="30" rx="15" fill="#8c4437"/><text x="640" y="294" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">removed</text>
+  </g>
+</svg>

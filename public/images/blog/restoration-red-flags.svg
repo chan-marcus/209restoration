@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="rrfT rrfD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="rrfT">Red flags when hiring a water damage company</title>
+  <desc id="rrfD">Five warning signs: pressure to sign an assignment of benefits before anyone has inspected, a large cash deposit up front, no moisture meter or thermal camera on the first visit, tearing out drywall without explaining readings, and equipment removed before a documented dry standard.</desc>
+  <rect width="760" height="330" rx="16" fill="#ffffff"/><rect width="760" height="330" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">Hang up, or at least slow down, if you hear these</text>
+  <text x="30" y="63" font-size="12" fill="#54707c">Most bad restoration experiences start with one of five moves.</text>
+
+  <g font-size="13" fill="#0e2433">
+    <g transform="translate(30 86)">
+      <rect width="700" height="40" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="40" rx="3" fill="#8c4437"/>
+      <text x="24" y="25" font-weight="700">"Sign this so we can bill your insurance"</text>
+      <text x="680" y="25" font-size="11.5" fill="#54707c" text-anchor="end">before anyone has looked</text>
+    </g>
+    <g transform="translate(30 134)">
+      <rect width="700" height="40" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="40" rx="3" fill="#8c4437"/>
+      <text x="24" y="25" font-weight="700">A big cash deposit up front</text>
+      <text x="680" y="25" font-size="11.5" fill="#54707c" text-anchor="end">mitigation is billed after, to the claim</text>
+    </g>
+    <g transform="translate(30 182)">
+      <rect width="700" height="40" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="40" rx="3" fill="#8c4437"/>
+      <text x="24" y="25" font-weight="700">No moisture meter on the first visit</text>
+      <text x="680" y="25" font-size="11.5" fill="#54707c" text-anchor="end">guessing is not a scope</text>
+    </g>
+    <g transform="translate(30 230)">
+      <rect width="700" height="40" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="40" rx="3" fill="#8c4437"/>
+      <text x="24" y="25" font-weight="700">Demolition with no readings to justify it</text>
+      <text x="680" y="25" font-size="11.5" fill="#54707c" text-anchor="end">every cut should have a number</text>
+    </g>
+    <g transform="translate(30 278)">
+      <rect width="700" height="40" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="40" rx="3" fill="#8c4437"/>
+      <text x="24" y="25" font-weight="700">Equipment pulled because "it looks dry"</text>
+      <text x="680" y="25" font-size="11.5" fill="#54707c" text-anchor="end">dry is a reading, not a look</text>
+    </g>
+  </g>
+</svg>

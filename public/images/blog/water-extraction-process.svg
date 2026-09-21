@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="wepT wepD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="wepT">The emergency water extraction visit, step by step</title>
+  <desc id="wepD">Five steps in the first visit. One, stop the source and make it safe. Two, inspect and map moisture with meters and a thermal camera. Three, extract standing water with a truck-mounted unit. Four, remove carpet pad and anything that cannot be dried. Five, set air movers and dehumidifiers. The visit usually takes two to six hours.</desc>
+  <rect width="760" height="340" rx="16" fill="#ffffff"/><rect width="760" height="340" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">What happens on the first visit</text>
+  <text x="30" y="63" font-size="12" fill="#54707c">Usually two to six hours on site, depending on square footage and what got wet.</text>
+
+  <path d="M96 150 H664" stroke="#cfdbe0" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+  <g font-size="12" text-anchor="middle" fill="#0e2433">
+    <g transform="translate(96 150)">
+      <circle r="30" fill="#0a7486"/>
+      <path d="M0 -14 l11 4 v7 c0 8 -5 13 -11 16 c-6 -3 -11 -8 -11 -16 v-7z" stroke="#fff" stroke-width="2.4" fill="none" stroke-linejoin="round"/><path d="M-5 1 l4 4 l7 -8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text y="58" font-weight="700">Make it safe</text>
+      <text y="76" font-size="11" fill="#54707c">source off,</text>
+      <text y="91" font-size="11" fill="#54707c">power checked</text>
+    </g>
+    <g transform="translate(238 150)">
+      <circle r="30" fill="#0a7486"/>
+      <rect x="-9" y="-14" width="18" height="26" rx="3" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M-4 -6 h8 M0 4 v4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+      <text y="58" font-weight="700">Map moisture</text>
+      <text y="76" font-size="11" fill="#54707c">meters +</text>
+      <text y="91" font-size="11" fill="#54707c">thermal camera</text>
+    </g>
+    <g transform="translate(380 150)">
+      <circle r="30" fill="#0d94a8"/>
+      <path d="M0 -14 c7 9 10 14 10 19 a10 10 0 0 1 -20 0 c0 -5 3 -10 10 -19z" stroke="#fff" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+      <text y="58" font-weight="700">Extract</text>
+      <text y="76" font-size="11" fill="#54707c">truck-mounted</text>
+      <text y="91" font-size="11" fill="#54707c">vacuum</text>
+    </g>
+    <g transform="translate(522 150)">
+      <circle r="30" fill="#0a7486"/>
+      <path d="M-11 -8 h22 M-8 -8 v18 h16 v-18 M-3 -13 h6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text y="58" font-weight="700">Remove</text>
+      <text y="76" font-size="11" fill="#54707c">pad, soaked</text>
+      <text y="91" font-size="11" fill="#54707c">drywall, insulation</text>
+    </g>
+    <g transform="translate(664 150)">
+      <circle r="30" fill="#0a7486"/>
+      <circle r="11" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M0 -11 v22 M-11 0 h22" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <text y="58" font-weight="700">Set drying</text>
+      <text y="76" font-size="11" fill="#54707c">air movers +</text>
+      <text y="91" font-size="11" fill="#54707c">dehumidifiers</text>
+    </g>
+  </g>
+
+  <rect x="30" y="274" width="700" height="42" rx="10" fill="#f2fafb" stroke="#cdeef2"/>
+  <text x="48" y="300" font-size="12" fill="#0e2433"><tspan font-weight="700">Then:</tspan> a technician returns daily for readings until the house hits a documented dry standard, usually 3 to 5 days.</text>
+</svg>

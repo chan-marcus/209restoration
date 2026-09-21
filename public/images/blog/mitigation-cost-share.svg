@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" aria-labelledby="mcsT mcsD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="mcsT">How waiting shifts money from mitigation to restoration</title>
+  <desc id="mcsD">Comparison of the same leak handled two ways. Mitigation started within 24 hours: a short mitigation bar and a small restoration bar limited to a flood cut and paint. Mitigation started after 72 hours: a longer mitigation bar with mold containment added, and a restoration bar several times larger covering full drywall, flooring, and cabinets.</desc>
+  <rect width="760" height="320" rx="16" fill="#ffffff"/><rect width="760" height="320" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">Fast mitigation keeps the restoration bill small</text>
+  <text x="30" y="63" font-size="12" fill="#54707c">Same leak, same house. Illustrative scope, not a quote.</text>
+
+  <text x="30" y="112" font-size="12.5" font-weight="700" fill="#0e2433">Started within 24 hours</text>
+  <rect x="30" y="124" width="150" height="30" rx="5" fill="#0a7486"/>
+  <text x="42" y="144" font-size="11.5" font-weight="600" fill="#ffffff">Mitigation</text>
+  <rect x="184" y="124" width="120" height="30" rx="5" fill="#9fd8e0"/>
+  <text x="196" y="144" font-size="11.5" font-weight="600" fill="#0e2433">Restoration</text>
+  <text x="318" y="144" font-size="11.5" fill="#54707c">flood cut, patch, paint</text>
+
+  <text x="30" y="200" font-size="12.5" font-weight="700" fill="#0e2433">Started after 72 hours</text>
+  <rect x="30" y="212" width="190" height="30" rx="5" fill="#0a7486"/>
+  <text x="42" y="232" font-size="11.5" font-weight="600" fill="#ffffff">Mitigation</text>
+  <rect x="220" y="212" width="70" height="30" fill="#8c4437"/>
+  <text x="255" y="232" font-size="10.5" font-weight="600" fill="#ffffff" text-anchor="middle">mold</text>
+  <rect x="294" y="212" width="436" height="30" rx="5" fill="#9fd8e0"/>
+  <text x="306" y="232" font-size="11.5" font-weight="600" fill="#0e2433">Restoration</text>
+  <text x="30" y="266" font-size="11.5" fill="#54707c">full-height drywall, flooring, cabinets, containment, re-testing</text>
+
+  <g font-size="11" fill="#54707c">
+    <rect x="30" y="286" width="12" height="12" rx="2" fill="#0a7486"/><text x="48" y="296">Mitigation</text>
+    <rect x="130" y="286" width="12" height="12" rx="2" fill="#8c4437"/><text x="148" y="296">Mold containment</text>
+    <rect x="270" y="286" width="12" height="12" rx="2" fill="#9fd8e0"/><text x="288" y="296">Restoration</text>
+  </g>
+</svg>
