@@ -5,7 +5,7 @@ date: 2026-08-16
 image: /images/blog/board-up-first-48.svg
 ---
 
-When a Valley wind event takes back part of a roof or puts a branch through a window, the building has a hole in it. Everything that happens next is decided by how fast that hole gets closed — and by whether you photographed it before it did.
+When a Valley wind event takes back part of a roof or puts a branch through a window, the building has a hole in it. Everything that happens next is decided by how fast that hole gets closed, and by whether you photographed it before it did.
 
 This is the sequence, and it is not the one most people expect. Repairs are last, not first.
 
@@ -21,9 +21,9 @@ This is the cheapest two minutes in the whole process and the one people skip.
 
 ### Hours 2–6: board up and tarp
 
-An open building is an invitation — to the next rain band, to animals, and to anyone walking past. Emergency [board up](/services/emergency-board-up/) closes window and door openings with plywood and fasteners; roof damage gets tarped or shrink-wrapped.
+An open building is an invitation to the next rain band, to animals, and to anyone walking past. Emergency [board up](/services/emergency-board-up/) closes window and door openings with plywood and fasteners; roof damage gets tarped or shrink-wrapped.
 
-Two things make this urgent rather than optional. Valley storms arrive in sequences, not single events — the atmospheric river pattern means the next system is often 24 to 48 hours behind the one that just did the damage. And an unsecured building is a liability exposure of its own.
+Two things make this urgent rather than optional. Valley storms arrive in sequences, not single events. The atmospheric river pattern means the next system is often 24 to 48 hours behind the one that just did the damage. And an unsecured building is a liability exposure of its own.
 
 ### Hours 6–24: extract and dry
 
@@ -31,7 +31,7 @@ Water that came in during the storm is still in the structure, and it does not c
 
 ### Day 2 onward: scope and repair
 
-Now it is construction — roofing, framing, drywall, paint. This phase moves at the speed of adjusters, materials, and scheduling rather than urgency, and it can run weeks. That is normal and it is not the emergency.
+Now it is construction: roofing, framing, drywall, paint. This phase moves at the speed of adjusters, materials, and scheduling rather than urgency, and it can run weeks. That is normal and it is not the emergency.
 
 ## Why insurance expects you to secure it
 
@@ -42,7 +42,7 @@ Two practical consequences:
 - **Emergency mitigation is normally covered**, and often paid separately from the repair scope. Keep the invoice.
 - **Damage that happened because you waited** is where carriers push back. If the roof was open for a week and three storms came through, the argument about what the first storm actually caused gets difficult.
 
-This is the same logic that governs water losses generally — mitigate first, argue about scope later. The [California insurance guide](/blog/water-damage-insurance-california/) covers how that plays out on a claim.
+This is the same logic that governs water losses generally: mitigate first, argue about scope later. The [California insurance guide](/blog/water-damage-insurance-california/) covers how that plays out on a claim.
 
 ## What actually fails in Valley storms
 
@@ -52,7 +52,7 @@ The damage here has a pattern, and it is mostly wind and water finding existing 
 - **Torn-back roofing.** Older composition shingle lifts at the edges and peels; once a section is gone, the deck is exposed.
 - **Tree limbs.** Mature trees in the older neighborhoods of Stockton, [Lodi](/areas/lodi/), and Modesto drop limbs onto roofs and through windows.
 - **Fence and outbuilding debris** becoming projectiles in sustained wind.
-- **Overwhelmed drainage** pushing water toward garages and doorways in flat, low-lying areas — this is the one that overlaps with [flood damage cleanup](/services/flood-damage-cleanup/).
+- **Overwhelmed drainage** pushing water toward garages and doorways in flat, low-lying areas. This is the one that overlaps with [flood damage cleanup](/services/flood-damage-cleanup/).
 
 ## Board up is not only a storm service
 
@@ -64,12 +64,12 @@ The same call handles a few situations people do not associate with it:
 
 ## What to do if it is happening now
 
-If the wind is still up or there is active water intrusion, stay out of the affected area — a compromised roof or ceiling is a structural risk, and standing water near electrical is a shock risk. Do not climb onto a wet or damaged roof to tarp it yourself; that is the single most common way a property loss turns into an injury.
+If the wind is still up or there is active water intrusion, stay out of the affected area. A compromised roof or ceiling is a structural risk, and standing water near electrical is a shock risk. Do not climb onto a wet or damaged roof to tarp it yourself; that is the single most common way a property loss turns into an injury.
 
 From the ground: photograph what you safely can, move what you can out of the water path, and call. Dispatch runs 24 hours, and board up is treated as an emergency because the clock on the next storm is already running.
 
 ## The short version
 
-Photograph, secure, dry, then repair — in that order. Your policy expects you to secure it, and the cost of doing so is normally covered. The mistake that gets expensive is leaving a building open through the next system.
+Photograph, secure, dry, then repair, in that order. Your policy expects you to secure it, and the cost of doing so is normally covered. The mistake that gets expensive is leaving a building open through the next system.
 
 [Storm and roof leak response](/services/storm-damage-repair/) and 24 hour board up are dispatched across [San Joaquin and Stanislaus Counties](/areas/), day or night.

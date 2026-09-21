@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "postbuild": "node scripts/check-no-em-dashes.mjs",
+    "check:dashes": "node scripts/check-no-em-dashes.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.0",

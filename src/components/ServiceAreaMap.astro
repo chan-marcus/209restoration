@@ -1,6 +1,6 @@
 ---
 // Interactive service-area map (Maps JavaScript API). Shades the whole service
-// region — San Joaquin and Stanislaus Counties — and marks the named cities
+// region (San Joaquin and Stanislaus Counties) and marks the named cities
 // inside it, fitting the view to the full coverage.
 // Needs PUBLIC_GOOGLE_MAPS_API_KEY with the Maps JavaScript API enabled and
 // allowed on the key. Falls back to a keyless iframe of the region when no key
@@ -34,7 +34,7 @@ const fallbackQuery = `${SITE.anchorCity}, ${SITE.anchorState}`;
 
     // Build the map only once the container actually has a size. Google's
     // callback fires before layout settles, and a map created against a 0x0
-    // element caches that size and never renders — the container measures
+    // element caches that size and never renders. The container measures
     // correctly afterwards, but the map stays blank. Re-running init by hand
     // after layout rendered it fine, which is what pinned this down.
     function whenSized(el, cb) {
@@ -58,7 +58,7 @@ const fallbackQuery = `${SITE.anchorCity}, ${SITE.anchorState}`;
     function buildServiceAreaMap(el) {
       const map = new google.maps.Map(el, {
         // A map built without center+zoom never renders, even when fitBounds()
-        // is later called with valid bounds — verified against a live control
+        // is later called with valid bounds, verified against a live control
         // map. fitBounds below still refines this to the shaded counties.
         center: { lat: 37.78, lng: -121.15 },
         zoom: 9,
@@ -94,7 +94,7 @@ const fallbackQuery = `${SITE.anchorCity}, ${SITE.anchorState}`;
         new google.maps.Marker({
           map,
           position: { lat: a.lat, lng: a.lng },
-          title: a.name + ' — ' + a.county,
+          title: a.name + ', ' + a.county,
           label: { text: a.name, fontSize: '11px', fontWeight: '600', color: '#0e2433' }
         });
       });
@@ -103,7 +103,7 @@ const fallbackQuery = `${SITE.anchorCity}, ${SITE.anchorState}`;
       ensureVisible(el);
     }
 
-    // Safety net. The JS Maps renderer does not boot in every environment —
+    // Safety net. The JS Maps renderer does not boot in every environment:
     // when it fails it leaves an empty container and logs nothing, so there is
     // no error to branch on. If nothing has painted shortly after init, swap in
     // the plain Maps embed iframe, which renders anywhere. A simpler map beats

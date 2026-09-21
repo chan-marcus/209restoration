@@ -5,7 +5,7 @@ date: 2026-08-09
 image: /images/blog/water-shutoff-map.svg
 ---
 
-Everything about a burst pipe gets cheaper if you find the valve fast. The damage is not really caused by the pipe failing — it is caused by how many minutes the water ran afterward. Ten minutes of a supply line at full pressure is a few hundred gallons.
+Everything about a burst pipe gets cheaper if you find the valve fast. The damage is not really caused by the pipe failing. It is caused by how many minutes the water ran afterward. Ten minutes of a supply line at full pressure is a few hundred gallons.
 
 So the useful thing to know, before it happens, is where the valves are.
 
@@ -19,7 +19,7 @@ Work outward. The closest valve to the leak is the one that costs you the least 
 
 **2. The water heater cold inlet.** A valve on top of the tank, on the cold side. If the tank itself failed, close this, then shut off the gas at the valve or the breaker for an electric unit. Garage water heater failures are one of the most common calls in [Manteca](/areas/manteca/) and the newer tract neighborhoods, where whole streets have units installed the same month.
 
-**3. The whole-house valve.** Usually near the front hose bib, in the garage, or where the supply line enters. This is the one to find on a calm afternoon, before you ever need it — a surprising number of people discover theirs is painted shut.
+**3. The whole-house valve.** Usually near the front hose bib, in the garage, or where the supply line enters. This is the one to find on a calm afternoon, before you ever need it. A surprising number of people discover theirs is painted shut.
 
 **4. The curb meter box.** A concrete or plastic lid by the sidewalk. The valve inside often needs a meter key, though adjustable pliers usually work. This is the backstop when the house valve fails or you cannot reach it.
 
@@ -30,7 +30,7 @@ If you take one thing from this page: go find valve 3 this week and turn it, jus
 The failures here have a local character, and they are not mostly about freezing.
 
 - **Hard water on copper.** Central Valley water is hard, and over years it works on copper from the inside until a pinhole opens. These are slow, quiet leaks that often run for weeks inside a wall or under a slab.
-- **Slab leaks.** In slab-on-grade tracts — most of [Tracy](/areas/tracy/), Manteca, and the newer Lathrop phases — a failed line under the concrete shows up as a warm spot on the floor, an unexplained water bill, or the sound of running water with everything off.
+- **Slab leaks.** In slab-on-grade tracts (most of [Tracy](/areas/tracy/), Manteca, and the newer Lathrop phases), a failed line under the concrete shows up as a warm spot on the floor, an unexplained water bill, or the sound of running water with everything off.
 - **Same-age cohorts.** Whole subdivisions were plumbed in the same year with the same fittings. When one house's angle stops or washer hoses start failing, its neighbors are on the same clock.
 - **Galvanized and clay in the older core.** Pre-1960s central Stockton and Lodi still have original galvanized supply lines that corrode closed and then split.
 - **Cold snaps, occasionally.** Valley winters do get there. The vulnerable spots are uninsulated hose bibs and pipes in unconditioned garages and crawl spaces, not the interior walls.
@@ -40,7 +40,7 @@ The failures here have a local character, and they are not mostly about freezing
 1. **Shut the closest valve** that stops the flow.
 2. **Kill power** at the breaker to rooms where water is near outlets, cords, or ceiling fixtures. If water is coming through a ceiling light, that circuit goes off before anything else.
 3. **Open a low faucet** to drain the remaining pressure in the line so it stops feeding the leak.
-4. **Photograph everything** — the source, the standing water, anything already damaged.
+4. **Photograph everything:** the source, the standing water, anything already damaged.
 5. **Move what you can** to dry ground, and get foil or plastic under furniture legs sitting on wet carpet, because wood stain and rust transfer permanently.
 6. **Do not run the HVAC.**
 
@@ -50,13 +50,13 @@ The [first hour checklist](/blog/first-hour-water-damage/) covers this sequence 
 
 People search for "water leak repair" and get a confusing mix of results, so here is the straight version.
 
-**A plumber fixes the pipe.** Replacing the failed section, repiping, re-routing a slab leak — that is plumbing work, and it is what stops the water permanently.
+**A plumber fixes the pipe.** Replacing the failed section, repiping, re-routing a slab leak: that is plumbing work, and it is what stops the water permanently.
 
 **A restoration crew handles what the water did.** Extraction, moisture mapping, drying the structure, removing what cannot be saved, and documenting it for the claim.
 
 They are two different trades, and on a real loss you usually need both. It matters for your claim, too: most policies cover the **resulting damage** but not the failed part itself. The pipe repair is typically on you; the soaked drywall, flooring, and the drying work is the claim.
 
-If you call here, you are getting the second one — [burst and leaking pipe cleanup](/services/burst-pipe-cleanup/) and [emergency water removal](/services/emergency-water-removal/). Dispatch will tell you plainly if what you actually need first is a plumber.
+If you call here, you are getting the second one: [burst and leaking pipe cleanup](/services/burst-pipe-cleanup/) and [emergency water removal](/services/emergency-water-removal/). Dispatch will tell you plainly if what you actually need first is a plumber.
 
 ## What happens if you just dry it yourself
 
