@@ -6,13 +6,17 @@ import MapEmbed from '../../components/MapEmbed.astro';
 import { SITE } from '../../config/site';
 import { CITIES } from '../../data/cities';
 import { SERVICES } from '../../data/services';
+import { tidy } from '../../lib/tidy';
 
 export function getStaticPaths() {
   return CITIES.map((c) => ({ params: { slug: c.slug }, props: { city: c } }));
 }
 
 const { city } = Astro.props;
-const topServices = SERVICES.slice(0, 6);
+/* Cities with Search Console demand beyond water damage name their own six. */
+const topServices = city.featured
+  ? city.featured.map((slug) => SERVICES.find((s) => s.slug === slug)).filter((s) => s !== undefined)
+  : SERVICES.slice(0, 6);
 const otherCities = CITIES.filter((c) => c.slug !== city.slug);
 
 const areaSchema = {
@@ -23,6 +27,12 @@ const areaSchema = {
   provider: { '@id': SITE.domain + '/#business' },
   areaServed: { '@type': 'City', name: city.name, containedInPlace: { '@type': 'AdministrativeArea', name: city.county } }
 };
+
+const faqSchema = city.faq && city.faq.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: city.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+} : null;
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -35,9 +45,9 @@ const breadcrumb = {
 };
 ---
 <Base
-  title={`Water Damage Restoration ${city.name}, CA | 24 Hour Cleanup Company`}
-  description={`24 hour water damage restoration and cleanup company in ${city.name}, CA. Emergency water removal, flood damage restoration, water damage repair, and mold removal by local ${city.county} crews. Open now, call ${SITE.phoneDigits}.`}
-  schema={[areaSchema, breadcrumb]}
+  title={city.metaTitle ?? `Water Damage Restoration ${city.name}, CA | 24 Hour Cleanup Company`}
+  description={city.metaDesc ?? `24 hour water damage restoration and cleanup company in ${city.name}, CA. Emergency water removal, flood damage restoration, water damage repair, and mold removal by local ${city.county} crews. Open now, call ${SITE.phoneDigits}.`}
+  schema={faqSchema ? [areaSchema, breadcrumb, faqSchema] : [areaSchema, breadcrumb]}
 >
   <section class="area-hero">
     <div class="wrap">
@@ -83,6 +93,20 @@ const breadcrumb = {
     </div>
   </section>
 
+  {city.sections && city.sections.length > 0 && (
+    <section>
+      <div class="wrap long">
+        {city.sections.map((s) => (
+          <div class="long-sec">
+            <h2>{s.h}</h2>
+            {s.p.map((para) => <p class="body-p">{tidy(para)}</p>)}
+            {s.link && <p class="long-link"><a href={s.link.href}>{s.link.label} &rarr;</a></p>}
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
   <section>
     <div class="wrap">
       <span class="eyebrow">Available in {city.name}</span>
@@ -97,11 +121,26 @@ const breadcrumb = {
           </a>
         ))}
       </div>
-      <p class="all-link"><a href="/services/">See all 12 services &rarr;</a></p>
+      <p class="all-link"><a href="/services/">See all {SERVICES.length} services &rarr;</a></p>
     </div>
   </section>
 
   <CtaBand heading={`Water emergency in ${city.name}?`} sub={`Crews local to ${city.county} answer around the clock. Calling costs nothing.`} />
+
+  {city.faq && city.faq.length > 0 && (
+    <section class="section-deep">
+      <div class="wrap long">
+        <span class="eyebrow">Questions</span>
+        <h2>{city.name} restoration questions</h2>
+        {city.faq.map((f) => (
+          <div class="faq">
+            <h3>{tidy(f.q)}</h3>
+            <p>{tidy(f.a)}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section>
     <div class="wrap">
@@ -130,6 +169,11 @@ const breadcrumb = {
   .area-map { margin-top: 2rem; max-width: 780px; }
   .hoods { margin-top: 2rem; font-size: 0.68rem; line-height: 2; color: var(--silt); }
 
+  .long { max-width: 780px; }
+  .long-sec + .long-sec { margin-top: 2.6rem; }
+  .long-link { margin-top: 1rem; }
+  .faq { margin-top: 1.8rem; max-width: 68ch; }
+  .faq p { margin-top: 0.4rem; }
   .all-link { margin-top: 1.6rem; }
   .nearby { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
   .nearby a {
