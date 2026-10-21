@@ -524,6 +524,9 @@ const websiteSchema = {
     .main-nav { display: none; }
     .burger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    /* Once the burger joins the row, logo + call button + burger no longer fit
+       at a 1.5rem gap on a phone, and the row overflowed the viewport. */
+    .header-inner { gap: 0.7rem; }
   }
   @media (max-width: 640px) {
     .logo-mark { width: 20px; height: 24px; }
@@ -531,6 +534,9 @@ const websiteSchema = {
     .header-call { padding: 0.38rem 0.65rem; border-radius: 9px; box-shadow: none; }
     .header-call-text small { display: none; }
     .header-call-text strong { font-size: 0.8rem; }
+    /* Never shrink the brand or the phone number to fit; shrink the gap and
+       let the whole row scale down together instead. */
+    .logo, .header-call, .burger { flex: 0 0 auto; }
     .open-dot { display: none; }
     .burger { width: 32px; height: 32px; }
     .burger span { width: 18px; }
@@ -538,5 +544,17 @@ const websiteSchema = {
     section { padding: 3.6rem 0; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     body { padding-bottom: 4.5rem; }
+  }
+  @media (max-width: 430px) {
+    .wrap { padding: 0 1.1rem; }
+    .logo { gap: 0.45rem; }
+    .logo-mark { width: 18px; height: 22px; }
+    .logo-text { font-size: 0.98rem; }
+    .header-call { padding: 0.34rem 0.55rem; }
+    .header-call-text strong { font-size: 0.76rem; }
+  }
+  @media (max-width: 340px) {
+    .header-inner { gap: 0.45rem; }
+    .logo-text { font-size: 0.92rem; }
   }
 </style>
