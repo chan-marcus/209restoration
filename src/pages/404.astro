@@ -8,7 +8,10 @@ import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
 import { CITIES } from '../data/cities';
 
-const topServices = SERVICES.slice(0, 6);
+// The .card-grid is repeat(auto-fill, minmax(255px, 1fr)), which lands on 1, 2,
+// 3 or 4 columns inside the 1140px wrap. 12 is the smallest count that fills
+// the last row at every one of those, so the grid never ends ragged.
+const topServices = SERVICES.slice(0, 12);
 ---
 <Base
   title="Page Not Found | 209 Restoration"
