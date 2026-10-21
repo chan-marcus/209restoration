@@ -1,0 +1,75 @@
+---
+// Cloudflare Pages serves dist/404.html with a real 404 status for any
+// unmatched route. Without this file it falls back to index.html with a 200,
+// which Google reports as a soft 404 and can index as a homepage duplicate.
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../config/site';
+import { SERVICES } from '../data/services';
+import { CITIES } from '../data/cities';
+
+const topServices = SERVICES.slice(0, 6);
+---
+<Base
+  title="Page Not Found | 209 Restoration"
+  description="That page does not exist. Call 209 Restoration 24/7 for emergency water damage help across San Joaquin and Stanislaus Counties, or pick a service below."
+  noindex={true}
+>
+  <section>
+    <div class="wrap nf-wrap">
+      <span class="eyebrow">Error 404</span>
+      <h1>That page is not here.</h1>
+      <p class="nf-lede">The link is wrong or the page has moved. If water is coming in right now, skip the navigation and call. A live dispatcher answers around the clock.</p>
+      <div class="nf-actions">
+        <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        <a class="btn-ghost" href="/">Back to home</a>
+      </div>
+      <p class="mono nf-open"><span class="open-dot" aria-hidden="true"></span> OPEN NOW &middot; LIVE DISPATCHER &middot; 24/7</p>
+    </div>
+  </section>
+
+  <section class="section-deep">
+    <div class="wrap">
+      <span class="eyebrow">Most likely what you wanted</span>
+      <h2>Emergency services</h2>
+      <div class="card-grid">
+        {topServices.map((s) => (
+          <a class="card" href={`/services/${s.slug}/`}>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="card-cta">DETAILS &rarr;</span>
+          </a>
+        ))}
+      </div>
+      <p class="nf-all"><a href="/services/">See all services &rarr;</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Where we dispatch</span>
+      <h2>Service areas</h2>
+      <div class="nf-cities">
+        {CITIES.map((c) => <a href={`/areas/${c.slug}/`}>{c.name}</a>)}
+      </div>
+      <p class="nf-all"><a href="/blog/">Read the guides &rarr;</a></p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .nf-wrap { max-width: 46em; }
+  .nf-lede { margin-top: 1rem; max-width: 54ch; }
+  .nf-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.8rem; }
+  .nf-open { margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; }
+  .nf-all { margin-top: 1.6rem; }
+  .nf-cities { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+  .nf-cities a {
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.45rem 1.1rem; text-decoration: none; color: var(--paper);
+    font-weight: 600; font-size: 0.92rem;
+  }
+  .nf-cities a:hover { border-color: var(--cyan); color: var(--cyan); }
+</style>
