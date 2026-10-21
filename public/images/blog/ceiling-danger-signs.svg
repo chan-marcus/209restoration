@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" aria-labelledby="cdsT cdsD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="cdsT">Ceiling water damage, from a stain to a collapse risk</title>
+  <desc id="cdsD">Four severity levels. A dry, stable brown ring means find the source and monitor it. A damp stain that is still spreading means call now while the drywall can still be dried. Bubbling or peeling paint means water is pooling above the surface and the room should be cleared below it. A sagging, bulging or dripping ceiling means leave the room immediately, because saturated drywall can come down as one sheet.</desc>
+  <rect width="760" height="320" rx="16" fill="#ffffff"/><rect width="760" height="320" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">When a stain stops being a stain</text>
+  <text x="30" y="64" font-size="12" fill="#54707c">Saturated drywall holds a surprising amount of water and lets go all at once.</text>
+
+  <g>
+    <g transform="translate(30 88)">
+      <rect width="700" height="46" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="46" rx="3" fill="#9fd8e0"/>
+      <text x="24" y="21" font-size="13" font-weight="700" fill="#0e2433">Dry, stable brown ring</text>
+      <text x="24" y="38" font-size="11.5" fill="#54707c">An old leak that may already be fixed. Find the source before you paint over it.</text>
+    </g>
+    <g transform="translate(30 144)">
+      <rect width="700" height="46" rx="10" fill="#f7fafb" stroke="#e4ebee"/>
+      <rect width="6" height="46" rx="3" fill="#31aebf"/>
+      <text x="24" y="21" font-size="13" font-weight="700" fill="#0e2433">Damp, and still spreading</text>
+      <text x="24" y="38" font-size="11.5" fill="#54707c">Active leak. Call while the drywall can still be dried instead of replaced.</text>
+    </g>
+    <g transform="translate(30 200)">
+      <rect width="700" height="46" rx="10" fill="#fdf6f4" stroke="#e8d5d0"/>
+      <rect width="6" height="46" rx="3" fill="#c0714f"/>
+      <text x="24" y="21" font-size="13" font-weight="700" fill="#0e2433">Bubbling or peeling paint</text>
+      <text x="24" y="38" font-size="11.5" fill="#54707c">Water is pooling above the paint film. Move what is underneath out of the room.</text>
+    </g>
+    <g transform="translate(30 256)">
+      <rect width="700" height="46" rx="10" fill="#f7ecea" stroke="#e0c3bc"/>
+      <rect width="6" height="46" rx="3" fill="#8c4437"/>
+      <text x="24" y="21" font-size="13" font-weight="700" fill="#8c4437">Sagging, bulging or dripping</text>
+      <text x="24" y="38" font-size="11.5" fill="#54707c">Leave the room now and keep people out. Saturated drywall drops as one sheet.</text>
+    </g>
+  </g>
+</svg>

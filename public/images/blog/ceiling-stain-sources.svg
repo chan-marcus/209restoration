@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="cssT cssD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="cssT">The four usual sources of a ceiling water stain</title>
+  <desc id="cssD">Cross section of a two storey house. One, a roof leak shows as a stain on the top floor ceiling that grows after rain. Two, a bathroom or laundry directly above shows a stain that grows when that fixture runs. Three, an air conditioning condensate line near a vent drips only in hot weather. Four, a supply or drain pipe in the joist bay drips steadily regardless of weather or use.</desc>
+  <rect width="760" height="360" rx="16" fill="#ffffff"/><rect width="760" height="360" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">Where the stain is tells you what is leaking</text>
+  <text x="30" y="64" font-size="12" fill="#54707c">Narrow it down by timing: rain, a fixture running, hot weather, or no pattern at all.</text>
+
+  <g stroke="#cfdbe0" stroke-width="2" fill="none">
+    <path d="M60 318 h340"/>
+    <path d="M60 318 v-120 h340 v120"/>
+    <path d="M44 198 l186 -74 l186 74"/>
+    <path d="M60 258 h340"/>
+  </g>
+  <rect x="62" y="200" width="336" height="56" fill="#f7fafb"/>
+  <rect x="62" y="260" width="336" height="56" fill="#f7fafb"/>
+
+  <g font-size="11" font-weight="700" fill="#ffffff">
+    <circle cx="150" cy="212" r="13" fill="#8c4437"/><text x="150" y="216" text-anchor="middle">1</text>
+    <circle cx="300" cy="212" r="13" fill="#0a7486"/><text x="300" y="216" text-anchor="middle">2</text>
+    <circle cx="120" cy="272" r="13" fill="#0a7486"/><text x="120" y="276" text-anchor="middle">3</text>
+    <circle cx="246" cy="272" r="13" fill="#0a7486"/><text x="246" y="276" text-anchor="middle">4</text>
+  </g>
+  <g font-size="10" fill="#93a3ab">
+    <text x="70" y="196">roof</text>
+    <text x="330" y="252">bath above</text>
+    <text x="70" y="312">living space</text>
+  </g>
+
+  <rect x="430" y="92" width="300" height="236" rx="12" fill="#f7fafb" stroke="#e4ebee"/>
+  <g font-size="12">
+    <circle cx="456" cy="126" r="11" fill="#8c4437"/><text x="456" y="130" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+    <text x="478" y="124" font-weight="700" fill="#0e2433">Roof leak</text>
+    <text x="478" y="142" font-size="11" fill="#54707c">grows after rain, top floor only</text>
+
+    <circle cx="456" cy="184" r="11" fill="#0a7486"/><text x="456" y="188" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+    <text x="478" y="182" font-weight="700" fill="#0e2433">Bathroom above</text>
+    <text x="478" y="200" font-size="11" fill="#54707c">grows when that fixture runs</text>
+
+    <circle cx="456" cy="242" r="11" fill="#0a7486"/><text x="456" y="246" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+    <text x="478" y="240" font-weight="700" fill="#0e2433">AC condensate line</text>
+    <text x="478" y="258" font-size="11" fill="#54707c">only in hot weather, near a vent</text>
+
+    <circle cx="456" cy="300" r="11" fill="#0a7486"/><text x="456" y="304" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+    <text x="478" y="298" font-weight="700" fill="#0e2433">Pipe in the joist bay</text>
+    <text x="478" y="316" font-size="11" fill="#54707c">steady, no weather pattern</text>
+  </g>
+</svg>

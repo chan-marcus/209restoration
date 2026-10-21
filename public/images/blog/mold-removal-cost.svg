@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="mrcT mrcD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="mrcT">Typical professional mold removal cost by scope</title>
+  <desc id="mrcD">Range chart of mold remediation cost. A single contained room runs about 1,500 to 4,000 dollars. Multiple rooms or HVAC involvement runs 4,000 to 8,000. A crawl space runs 3,000 to 9,000. A whole house or structural job runs 8,000 to 20,000 or more. Small surface patches under ten square feet are usually a do it yourself cleaning job instead.</desc>
+  <rect width="760" height="330" rx="16" fill="#ffffff"/><rect width="760" height="330" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">What professional mold removal costs</text>
+  <text x="30" y="64" font-size="12" fill="#54707c">Central Valley ranges for remediation only. Rebuilding what came out is billed separately.</text>
+
+  <g stroke="#eef3f5" stroke-width="1">
+    <line x1="220" y1="86" x2="220" y2="262"/><line x1="315" y1="86" x2="315" y2="262"/>
+    <line x1="410" y1="86" x2="410" y2="262"/><line x1="505" y1="86" x2="505" y2="262"/>
+    <line x1="600" y1="86" x2="600" y2="262"/>
+  </g>
+  <g font-size="10.5" fill="#8b9aa2" text-anchor="middle">
+    <text x="220" y="278">$0</text><text x="315" y="278">$5k</text><text x="410" y="278">$10k</text>
+    <text x="505" y="278">$15k</text><text x="600" y="278">$20k</text>
+  </g>
+
+  <g font-size="12">
+    <text x="206" y="110" text-anchor="end" fill="#0e2433" font-weight="600">Single room</text>
+    <rect x="220" y="98" width="29" height="18" rx="4" fill="#0a7486"/>
+    <rect x="249" y="98" width="47" height="18" rx="4" fill="#9fd8e0"/>
+    <text x="616" y="112" font-size="11" fill="#54707c">$1,500 to $4,000</text>
+
+    <text x="206" y="150" text-anchor="end" fill="#0e2433" font-weight="600">Multi-room or HVAC</text>
+    <rect x="220" y="138" width="76" height="18" rx="4" fill="#0a7486"/>
+    <rect x="296" y="138" width="76" height="18" rx="4" fill="#9fd8e0"/>
+    <text x="616" y="152" font-size="11" fill="#54707c">$4,000 to $8,000</text>
+
+    <text x="206" y="190" text-anchor="end" fill="#0e2433" font-weight="600">Crawl space</text>
+    <rect x="220" y="178" width="57" height="18" rx="4" fill="#0a7486"/>
+    <rect x="277" y="178" width="114" height="18" rx="4" fill="#9fd8e0"/>
+    <text x="616" y="192" font-size="11" fill="#54707c">$3,000 to $9,000</text>
+
+    <text x="206" y="230" text-anchor="end" fill="#0e2433" font-weight="600">Whole house</text>
+    <rect x="220" y="218" width="152" height="18" rx="4" fill="#0a7486"/>
+    <rect x="372" y="218" width="228" height="18" rx="4" fill="#9fd8e0"/>
+    <text x="616" y="232" font-size="11" font-weight="600" fill="#0e2433">$8,000 and up</text>
+  </g>
+  <text x="30" y="306" font-size="11" fill="#54707c">Under 10 square feet on a hard surface is usually a cleaning job, not a remediation job.</text>
+</svg>

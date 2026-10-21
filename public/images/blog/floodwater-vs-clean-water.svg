@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 350" role="img" aria-labelledby="fvcT fvcD" font-family="Inter, -apple-system, Segoe UI, sans-serif">
+  <title id="fvcT">Burst pipe water compared with outside floodwater</title>
+  <desc id="fvcD">Comparison across five rows. A burst pipe is category one clean water, carpet is often dried, drywall is usually flood cut, contents are mostly saved, and a standard homeowners policy normally covers it. Outside floodwater is category three from the moment it arrives, carpet and pad are removed, drywall is cut above the waterline, porous contents are discarded, and a separate flood policy is usually required.</desc>
+  <rect width="760" height="350" rx="16" fill="#ffffff"/><rect width="760" height="350" rx="16" fill="none" stroke="#e4ebee"/>
+  <text x="30" y="42" font-size="15" font-weight="700" fill="#0e2433">Same wet floor, two completely different jobs</text>
+  <text x="30" y="64" font-size="12" fill="#54707c">What the water touched on its way in decides nearly everything that follows.</text>
+
+  <rect x="296" y="82" width="210" height="32" rx="8" fill="#0a7486"/>
+  <text x="401" y="103" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Burst pipe</text>
+  <rect x="518" y="82" width="212" height="32" rx="8" fill="#8c4437"/>
+  <text x="624" y="103" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Outside floodwater</text>
+
+  <g font-size="12">
+    <text x="30" y="146" font-weight="700" fill="#0e2433">Water category</text>
+    <text x="401" y="146" fill="#54707c" text-anchor="middle">Category 1, clean</text>
+    <text x="624" y="146" fill="#8c4437" font-weight="600" text-anchor="middle">Category 3, on arrival</text>
+    <line x1="30" y1="162" x2="730" y2="162" stroke="#eef3f5"/>
+
+    <text x="30" y="188" font-weight="700" fill="#0e2433">Carpet and pad</text>
+    <text x="401" y="188" fill="#54707c" text-anchor="middle">Carpet often dried</text>
+    <text x="624" y="188" fill="#8c4437" font-weight="600" text-anchor="middle">Both removed</text>
+    <line x1="30" y1="204" x2="730" y2="204" stroke="#eef3f5"/>
+
+    <text x="30" y="230" font-weight="700" fill="#0e2433">Drywall</text>
+    <text x="401" y="230" fill="#54707c" text-anchor="middle">Dried or flood cut</text>
+    <text x="624" y="230" fill="#8c4437" font-weight="600" text-anchor="middle">Cut above the waterline</text>
+    <line x1="30" y1="246" x2="730" y2="246" stroke="#eef3f5"/>
+
+    <text x="30" y="272" font-weight="700" fill="#0e2433">Contents</text>
+    <text x="401" y="272" fill="#54707c" text-anchor="middle">Mostly saved</text>
+    <text x="624" y="272" fill="#8c4437" font-weight="600" text-anchor="middle">Porous items discarded</text>
+    <line x1="30" y1="288" x2="730" y2="288" stroke="#eef3f5"/>
+
+    <text x="30" y="314" font-weight="700" fill="#0e2433">Insurance</text>
+    <text x="401" y="314" fill="#54707c" text-anchor="middle">Homeowners, usually</text>
+    <text x="624" y="314" fill="#8c4437" font-weight="600" text-anchor="middle">Separate flood policy</text>
+  </g>
+</svg>
