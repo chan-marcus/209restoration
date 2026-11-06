@@ -1,4 +1,5 @@
 ---
+import ContyntCredit from '../components/ContyntCredit.astro';
 import { SITE } from '../config/site';
 
 interface Props {
@@ -162,6 +163,7 @@ const websiteSchema = {
       <p class="legal-line">{SITE.legalLine.split(/(?<=\.)\s+/).map((x) => <span>{x}</span>)}</p>
       <p>&copy; {new Date().getFullYear()} {SITE.brand}. All rights reserved.</p>
     </div>
+    <div class="foot-credit"><ContyntCredit /></div>
   </footer>
 
   <a class="call-bar" href={`tel:${SITE.phone}`}>
@@ -449,6 +451,8 @@ const websiteSchema = {
   }
   .site-footer nav a:hover { color: var(--paper); }
   .site-footer .btn-call { background: var(--primary); }
+  /* "By CONTYNT" credit on its own centered line under the legal row. */
+  .foot-credit { display: flex; justify-content: center; padding: 1.25rem 0 0.25rem; }
   .footer-legal { border-top: 1px solid rgba(103, 211, 224, 0.12); padding-top: 1.6rem; padding-bottom: 1.6rem; }
   .footer-legal p { font-size: 0.78rem; color: #64808f; max-width: 75ch; }
   .footer-legal p + p { margin-top: 0.6rem; }
