@@ -70,4 +70,4 @@ The dividing line is roughly: if it soaked into anything porous, or you cannot s
 
 Know where valve 3 is. Shut the closest valve first, kill the power, then photograph. Plumbers fix pipes, restoration crews handle the damage, and your policy usually pays for the second one.
 
-If water is moving through your house right now, dispatch answers 24/7 across [the 209](/areas/), and the call is free.
+If water is moving through your house right now, dispatch answers 24/7 anywhere in [the 209](/areas/), and the call costs you nothing.
