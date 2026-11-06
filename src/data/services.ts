@@ -4,6 +4,7 @@
 export interface Service {
   slug: string;
   name: string;
+  card?: string;        // shorter title for service cards, one line at every width (defaults to name)
   short: string;        // card blurb
   icon: string;
   h1: string;
@@ -16,6 +17,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'emergency-water-removal',
     name: 'Emergency Water Removal',
+    card: 'Water Removal',
     short: 'Truck-mounted extraction gets standing water out fast, before it soaks into subfloor and drywall.',
     icon: 'extract',
     h1: 'Emergency Water Removal in the 209',
@@ -60,6 +62,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'sewage-cleanup',
     name: 'Sewage & Black Water Cleanup',
+    card: 'Sewage Cleanup',
     short: 'Backed-up mains, overflowed toilets, and failed lines cleaned to biohazard standards.',
     icon: 'sewage',
     h1: 'Sewage Cleanup in Stockton, Modesto & the 209',
@@ -82,6 +85,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'burst-pipe-cleanup',
     name: 'Burst & Leaking Pipe Cleanup',
+    card: 'Burst Pipe Cleanup',
     short: 'Supply line failures, slab leaks, and pinhole leaks: extraction, drying, and damage repair.',
     icon: 'pipe',
     h1: 'Burst Pipe & Slab Leak Cleanup',
@@ -104,6 +108,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'structural-drying',
     name: 'Structural Drying & Dehumidification',
+    card: 'Structural Drying',
     short: 'Commercial air movers, LGR dehumidifiers, and daily meter readings until dry-standard is verified.',
     icon: 'drying',
     h1: 'Structural Drying & Dehumidification',
@@ -126,6 +131,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'mold-remediation',
     name: 'Mold Removal & Remediation',
+    card: 'Mold Removal',
     short: 'Mold removal with containment, HEPA filtration, and treatment when water damage was found too late.',
     icon: 'mold',
     h1: 'Mold Removal and Remediation in the 209',
@@ -148,6 +154,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'storm-damage-repair',
     name: 'Storm & Roof Leak Response',
+    card: 'Storm & Roof Leaks',
     short: 'Emergency tarping, roof leak intrusion drying, and wind damage cleanup during Valley storm season.',
     icon: 'storm',
     h1: 'Storm Damage & Roof Leak Response',
@@ -170,6 +177,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'crawl-space-water-removal',
     name: 'Crawl Space & Under-Home Water',
+    card: 'Crawl Space Water',
     short: 'Standing water, saturated soil, and wet insulation under raised-foundation Valley homes.',
     icon: 'crawl',
     h1: 'Crawl Space Water Removal',
@@ -192,6 +200,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'appliance-leak-cleanup',
     name: 'Appliance & Water Heater Leaks',
+    card: 'Appliance Leaks',
     short: 'Failed water heaters, washer hoses, dishwasher lines, and fridge lines, cleaned up and dried.',
     icon: 'appliance',
     h1: 'Appliance & Water Heater Leak Cleanup',
@@ -214,6 +223,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'fire-smoke-damage',
     name: 'Fire & Smoke Damage Restoration',
+    card: 'Fire & Smoke Damage',
     short: 'Smoke, soot, and the water damage firefighting leaves behind, restored together.',
     icon: 'fire',
     h1: 'Fire & Smoke Damage Restoration',
@@ -236,6 +246,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'commercial-water-damage',
     name: 'Commercial Water Damage',
+    card: 'Commercial Buildings',
     short: 'Restaurants, offices, retail, and warehouses along the 99 corridor, dried with downtime in mind.',
     icon: 'commercial',
     h1: 'Commercial Water Damage in the 209',
@@ -258,6 +269,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'insurance-claim-help',
     name: 'Insurance Claim Assistance',
+    card: 'Insurance Claims',
     short: 'Documentation, scope, and direct billing so your water damage claim actually gets paid.',
     icon: 'claim',
     h1: 'Water Damage Insurance Claim Help',

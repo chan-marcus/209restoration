@@ -38,7 +38,7 @@ const topServices = SERVICES.slice(0, 12);
       <div class="card-grid">
         {topServices.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
-            <h3>{s.name}</h3>
+            <h3>{s.card ?? s.name}</h3>
             <p>{s.short}</p>
             <span class="card-cta">DETAILS &rarr;</span>
           </a>

@@ -34,7 +34,7 @@ export const CITIES: City[] = [
     localRisks: [
       { title: 'High water table near the Delta', body: 'Homes near the channel, Smith Canal, and Buckley Cove see crawl space water and slab moisture even without a visible leak.' },
       { title: 'Older plumbing in central Stockton', body: 'Galvanized supply lines and clay sewer laterals in pre-1960s neighborhoods fail with age, and root intrusion backups are routine.' },
-      { title: 'Storm drainage overload', body: 'Big winter systems overwhelm street drainage in low spots, pushing water toward garages and doorways.' }
+      { title: 'Storm drain overflow', body: 'Big winter systems overwhelm street drainage in low spots, pushing water toward garages and doorways.' }
     ],
     neighborhoods: ['Miracle Mile', 'Lincoln Village', 'Weston Ranch', 'Spanos Park', 'Victory Park', 'Brookside', 'Sherwood Manor', 'Country Club']
   },
@@ -50,9 +50,9 @@ export const CITIES: City[] = [
       'Away from the rivers, Modesto\u2019s risk looks like the rest of the Valley: mid-century homes around the College area and downtown with original galvanized plumbing, hard water eating copper in the slab-built tracts off Pelandale and Sylvan, and water heaters failing in garages across Village One.'
     ],
     localRisks: [
-      { title: 'River-adjacent flooding', body: 'The airport neighborhood and areas along the Tuolumne have flooded in major storm years, most recently during the 2023 atmospheric river sequence.' },
+      { title: 'Riverside flooding', body: 'The airport neighborhood and areas along the Tuolumne have flooded in major storm years, most recently during the 2023 atmospheric river sequence.' },
       { title: 'Dry Creek storm surges', body: 'East side neighborhoods near Dry Creek see fast-rising storm water that recedes quickly but leaves saturated crawl spaces behind.' },
-      { title: 'Aging mid-century plumbing', body: 'Original supply lines in College area and downtown homes are past their design life.' }
+      { title: 'Original mid-century pipes', body: 'Original supply lines in College area and downtown homes are past their design life.' }
     ],
     neighborhoods: ['La Loma', 'College area', 'Village One', 'Downtown', 'Airport district', 'Sylvan', 'Pelandale corridor', 'Enslen Park']
   },
@@ -176,7 +176,7 @@ export const CITIES: City[] = [
     localRisks: [
       { title: 'Garage water heater failures', body: 'Tank failures flood garages and wick under walls into hallways and bedrooms, often discovered hours later.' },
       { title: 'Same-age plumbing cohorts', body: 'Entire subdivisions built in the same year hit supply line and angle stop failure age together.' },
-      { title: 'South-side high groundwater', body: 'Neighborhoods toward the river see crawl space and slab moisture in wet winters.' }
+      { title: 'High groundwater by the river', body: 'Neighborhoods toward the river see crawl space and slab moisture in wet winters.' }
     ],
     neighborhoods: ['Central Manteca', 'Library Park area', 'Atherton corridor', 'Woodward Park area', 'Union Ranch', 'Del Webb', 'Sundance', 'South Manteca'],
     metaTitle: 'Flood & Water Damage Restoration in Manteca, CA | 24/7',
@@ -228,7 +228,7 @@ export const CITIES: City[] = [
     ],
     localRisks: [
       { title: 'Flat-ground ponding', body: 'Storm water ponds against foundations and garage thresholds in older, flatter neighborhoods during multi-day storm events.' },
-      { title: 'Historic core plumbing', body: 'Homes around downtown and Crane Park carry original supply and drain lines well past their service life.' },
+      { title: 'Old pipes in the historic core', body: 'Homes around downtown and Crane Park carry original supply and drain lines well past their service life.' },
       { title: 'Unreported rental leaks', body: 'University-area rentals where a slow leak ran for months before anyone called it in, usually with mold involved.' }
     ],
     neighborhoods: ['Downtown Turlock', 'Crane Park area', 'Stanislaus State area', 'Northeast Turlock', 'Countryside', 'Denair', 'Keyes', 'Monte Vista corridor']
@@ -264,7 +264,7 @@ export const CITIES: City[] = [
     ],
     localRisks: [
       { title: 'Tuolumne floodplain edge', body: 'North Ceres near the river sees elevated groundwater and crawl space moisture in big water years.' },
-      { title: 'Remodel-era plumbing', body: 'Partial repipes in older ranch homes leave mixed-material plumbing that fails at the transitions.' },
+      { title: 'Partial repipes that fail', body: 'Partial repipes in older ranch homes leave mixed-material plumbing that fails at the transitions.' },
       { title: 'Hall closet water heaters', body: 'Interior water heater failures do far more damage than garage failures, soaking hallways and bedrooms directly.' }
     ],
     neighborhoods: ['Hatch Road corridor', 'Whitmore corridor', 'Smyrna Park area', 'Eastgate', 'Westport', 'North Ceres', 'Mitchell Road corridor', 'Keyes']
