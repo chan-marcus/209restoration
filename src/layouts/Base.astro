@@ -496,11 +496,16 @@ const websiteSchema = {
   .waterline { display: none; }
 
   /* ---------- cards ---------- */
+  /* Columns come from the card count (evenCols() in src/lib/grid.ts) so every
+     row is full at every width; a card never gets narrower than 255px. */
   .card-grid {
     display: grid; gap: 1.1rem;
-    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    grid-template-columns: 1fr;
     margin-top: 2.8rem;
   }
+  @media (min-width: 640px) { .card-grid.t2 { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 860px) { .card-grid.m3 { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1140px) { .card-grid.d4 { grid-template-columns: repeat(4, 1fr); } }
   .card {
     background: var(--panel);
     border: 1px solid var(--line);

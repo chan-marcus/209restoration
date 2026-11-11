@@ -1,4 +1,4 @@
-// 12 services -> 12 pages at /services/[slug]/
+// 16 services -> 16 pages at /services/[slug]/ (always a multiple of 4: see the check at the bottom)
 // icon = key into the SVG icon set in src/components/ServiceIcon.astro
 
 export interface Service {
@@ -332,5 +332,57 @@ export const SERVICES: Service[] = [
       { q: 'Does my policy cover contents?', a: 'Most homeowners policies cover personal property under a separate limit from the structure. That is why the inventory matters: the contents portion of your claim is paid from documentation, not from memory.' },
       { q: 'What happens to my belongings during a pack out?', a: 'Items are inventoried, moved to storage, cleaned where appropriate, and returned when the structure is ready. You get the inventory list, so nothing depends on trust alone.' }
     ]
+  },
+  {
+    slug: 'hardwood-floor-drying',
+    name: 'Hardwood Floor Drying',
+    card: 'Hardwood Floors',
+    short: 'Wet hardwood dried in place with drying panels, so a cupped floor can often be saved instead of torn out.',
+    icon: 'floor',
+    h1: 'Hardwood Floor Drying in the 209',
+    intro: [
+      'Wet hardwood does not stay flat. Water wicks into the bottom of each board, the edges rise, and within a day or two the floor is cupped. The usual reaction is to tear it out, but solid hardwood caught early can often be dried in place, which beats paying for a new floor and hunting down boards that match the rest of the house.',
+      'Call and a dispatcher connects you with a local crew that dries floors with specialty drying panels. The panels seal over the boards and pull moisture up through the wood while dehumidifiers dry the room, and the crew tracks readings until the floor is back to normal for your house.'
+    ],
+    bullets: [
+      { title: 'Panel and mat drying', body: 'Drying panels pull water up through the boards and out of the subfloor, so the floor stays where it is.' },
+      { title: 'Readings against a dry baseline', body: 'Moisture is measured against a dry part of the same floor, so drying stops at your normal, not at a guess.' },
+      { title: 'Save or replace, answered early', body: 'Solid, engineered, and laminate floors react differently, and the crew tells you early which ones can be saved.' },
+      { title: 'Claim-ready documentation', body: 'Daily moisture logs and photos that show the adjuster why drying, not replacement, was the right call.' }
+    ],
+    faq: [
+      { q: 'My floor is already cupped. Is it ruined?', a: 'Not necessarily. Cupping means the bottom of each board holds more moisture than the top, and once the wood dries evenly many floors flatten out on their own. The mistake is sanding a cupped floor before it is dry, which leaves it crowned for good.' },
+      { q: 'How long does hardwood take to dry?', a: 'Days, not hours, and longer than carpet or drywall. It depends on how long the water sat, the wood, and what is underneath. The crew checks readings every day and stops when the floor matches a dry area of the house.' },
+      { q: 'Can laminate or engineered flooring be dried the same way?', a: 'Engineered hardwood sometimes can, if its layers have not separated. Laminate has a fiberboard core that swells and does not shrink back, so swollen laminate is usually replaced and the subfloor under it is dried.' }
+    ]
+  },
+  {
+    slug: 'ac-condensate-leak-cleanup',
+    name: 'AC Condensate Leak Cleanup',
+    card: 'AC Leaks',
+    short: 'Attic AC drains that clog and overflow into insulation and ceilings, dried out before the drywall sags.',
+    icon: 'ac',
+    h1: 'AC Condensate Leak Cleanup',
+    intro: [
+      'An air conditioner pulls water out of the air every hour it runs, and a Valley summer means a lot of hours. That water is supposed to leave through a small drain line. When the line clogs with algae or debris, the pan under an attic unit fills and overflows, and the first sign is a brown stain spreading across the ceiling below.',
+      'Call and a dispatcher connects you with a local crew that finds where the water went, removes soaked insulation and ceiling drywall that cannot be saved, and dries the attic and the rooms under it. Clearing the drain itself is a job for your HVAC tech, and the crew documents the cause for both of you and for your insurance.'
+    ],
+    bullets: [
+      { title: 'Attic and ceiling drying', body: 'Wet insulation pulled, framing and ceiling drywall dried, so the stain does not come back as mold.' },
+      { title: 'Following the water', body: 'Meters and thermal cameras trace water along joists and into walls, often well away from the stain.' },
+      { title: 'Sagging ceilings handled safely', body: 'Drywall holding water is drained or removed in a controlled way before it comes down on its own.' },
+      { title: 'The cause on record', body: 'Photos of the pan, the drain line, and the damage, for the HVAC repair and for your claim.' }
+    ],
+    faq: [
+      { q: 'There is a stain on the ceiling under my AC. What should I do first?', a: 'Turn the AC off at the thermostat so it stops making water, put a bucket under any drip, and call. If the ceiling is bulging, keep people and pets out of that room.' },
+      { q: 'Do I need a restoration crew or an HVAC tech?', a: 'Often both. The HVAC tech clears the drain and checks the float switch that should shut the unit off when the pan fills. The restoration crew handles the wet attic, insulation, and ceiling, which the HVAC visit does not cover.' },
+      { q: 'We have a swamp cooler on the roof. Same problem?', a: 'Close to it. Rooftop evaporative coolers leak when a float valve sticks or the pan rusts through, and the water gets in around the roof opening. The cleanup and drying below are the same.' }
+    ]
   }
 ];
+
+// The services grid always ends on a full row of four, so the build stops if
+// the count drifts off a multiple of 4. Add or remove services in fours.
+if (SERVICES.length % 4 !== 0) {
+  throw new Error(`SERVICES has ${SERVICES.length} entries. Keep it a multiple of 4 so the services grid ends on a full row of four.`);
+}

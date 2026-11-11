@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
 import { CITIES } from '../data/cities';
+import { evenCols } from '../lib/grid';
 
 const faq = [
   { q: 'How fast can a crew get to me?', a: 'Dispatch answers 24/7 and crews are local to San Joaquin and Stanislaus Counties. Emergency response across Stockton, Modesto, Lodi, Tracy, and Manteca is typically a matter of hours, day or night.' },
@@ -64,7 +65,7 @@ const faqSchema = {
       <span class="eyebrow">Every kind of water problem</span>
       <h2>Restoration services</h2>
       <p class="section-sub">Each service has its own page with what the crew does, what it costs your insurance instead of you, and what to do before they arrive.</p>
-      <div class="card-grid">
+      <div class={`card-grid ${evenCols(SERVICES.length)}`}>
         {SERVICES.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
             <ServiceIcon icon={s.icon} />
@@ -112,7 +113,7 @@ const faqSchema = {
       <span class="eyebrow">Local crews, local knowledge</span>
       <h2>Serving the 209</h2>
       <p class="section-sub">Delta water tables, Tuolumne floodplains, hard-water slab leaks, same-age tract plumbing. Every city here has its own way of getting wet, and every one has its own page.</p>
-      <div class="card-grid areas-grid">
+      <div class={`card-grid areas-grid ${evenCols(CITIES.length)}`}>
         {CITIES.map((c) => (
           <a class="card" href={`/areas/${c.slug}/`}>
             <h3>{c.name}</h3>

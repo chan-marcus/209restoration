@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { CITIES } from '../../data/cities';
+import { evenCols } from '../../lib/grid';
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -22,7 +23,7 @@ const breadcrumb = {
       <span class="eyebrow">San Joaquin + Stanislaus Counties</span>
       <h1>Where crews respond</h1>
       <p class="lede">Local crews stationed across the Valley, not routed in from the Bay. Each city page covers the specific ways homes there take on water, from Delta groundwater to Tuolumne floodplain to hard-water slab leaks.</p>
-      <div class="card-grid">
+      <div class={`card-grid ${evenCols(CITIES.length)}`}>
         {CITIES.map((c) => (
           <a class="card" href={`/areas/${c.slug}/`}>
             <h3>{c.name}</h3>

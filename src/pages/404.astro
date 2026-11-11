@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
 import { CITIES } from '../data/cities';
+import { evenCols } from '../lib/grid';
 
 // The .card-grid is repeat(auto-fill, minmax(255px, 1fr)), which lands on 1, 2,
 // 3 or 4 columns inside the 1140px wrap. 12 is the smallest count that fills
@@ -35,7 +36,7 @@ const topServices = SERVICES.slice(0, 12);
     <div class="wrap">
       <span class="eyebrow">Most likely what you wanted</span>
       <h2>Emergency services</h2>
-      <div class="card-grid">
+      <div class={`card-grid ${evenCols(topServices.length)}`}>
         {topServices.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
             <h3>{s.card ?? s.name}</h3>

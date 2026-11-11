@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import ServiceIcon from '../../components/ServiceIcon.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { SERVICES } from '../../data/services';
+import { evenCols } from '../../lib/grid';
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -23,7 +24,7 @@ const breadcrumb = {
       <span class="eyebrow">24/7 across the 209</span>
       <h1>Water damage restoration services</h1>
       <p class="lede">A full damage restoration service for the 209, from the first hour of extraction through drying, mold removal, and repair. Water finds a lot of ways into a house; pick the one that found yours, and each page covers what the crew does, insurance realities, and what to do before they arrive.</p>
-      <div class="card-grid">
+      <div class={`card-grid ${evenCols(SERVICES.length)}`}>
         {SERVICES.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
             <ServiceIcon icon={s.icon} />

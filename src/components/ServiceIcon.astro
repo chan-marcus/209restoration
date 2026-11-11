@@ -109,3 +109,18 @@ const { icon } = Astro.props;
     <path d="M18 24 h12" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"/>
   </svg>
 )}
+{icon === 'floor' && (
+  <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <rect x="6" y="24" width="36" height="16" rx="2" stroke="var(--paper)" stroke-width="2.5"/>
+    <path d="M6 32 h36 M20 24 v8 M30 32 v8" stroke="var(--paper)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M15 19 v-11 M11 12 l4 -4 4 4 M33 19 v-11 M29 12 l4 -4 4 4" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+)}
+{icon === 'ac' && (
+  <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <rect x="8" y="6" width="32" height="18" rx="3" stroke="var(--paper)" stroke-width="2.5"/>
+    <path d="M14 13 h20 M14 18 h20" stroke="var(--paper)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M17 29 v4 M24 29 v6 M31 29 v4" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M10 42 q4.5 -4 9 0 t9 0 t10 0" stroke="var(--cyan)" stroke-width="2.5"/>
+  </svg>
+)}

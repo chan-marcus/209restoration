@@ -5,6 +5,7 @@ import CtaBand from '../../components/CtaBand.astro';
 import { SITE } from '../../config/site';
 import { SERVICES } from '../../data/services';
 import { CITIES } from '../../data/cities';
+import { evenCols } from '../../lib/grid';
 
 export function getStaticPaths() {
   return SERVICES.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
@@ -105,7 +106,7 @@ const breadcrumb = {
     <div class="wrap">
       <span class="eyebrow">Related services</span>
       <h2>Water problems travel in packs</h2>
-      <div class="card-grid">
+      <div class={`card-grid ${evenCols(others.length)}`}>
         {others.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
             <ServiceIcon icon={s.icon} />
@@ -137,6 +138,8 @@ const breadcrumb = {
   .svc-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.8rem; }
 
   .bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  /* An odd count gives the first item the full width, so rows end full. */
+  .bullet-grid > :first-child:nth-last-child(odd):not(:only-child) { grid-column: 1 / -1; }
   .bullet { border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem; background: var(--panel); }
   .bullet p { margin-top: 0.4rem; font-size: 0.95rem; }
 

@@ -7,6 +7,7 @@ import { SITE } from '../../config/site';
 import { CITIES } from '../../data/cities';
 import { SERVICES } from '../../data/services';
 import { tidy } from '../../lib/tidy';
+import { evenCols } from '../../lib/grid';
 
 export function getStaticPaths() {
   return CITIES.map((c) => ({ params: { slug: c.slug }, props: { city: c } }));
@@ -111,7 +112,7 @@ const breadcrumb = {
     <div class="wrap">
       <span class="eyebrow">Available in {city.name}</span>
       <h2>Services on call tonight</h2>
-      <div class="card-grid">
+      <div class={`card-grid ${evenCols(topServices.length)}`}>
         {topServices.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
             <ServiceIcon icon={s.icon} />
